@@ -19,9 +19,14 @@ Route::get('/pronostics', function () {
     return view('pages/bets');
 });
 
+Route::get('/profil', function () {
+    return view('pages/profil');
+});
+
 Route::get('/stats', function () {
     return view('pages/stats');
 });
+
 Route::get('/contact', function () {
     return view('pages/contact');
 });
