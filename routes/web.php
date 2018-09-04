@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-Route::get('/pronostics', function () {
-    return view('pages/bets');
-});
+Auth::routes();
+
+Route::get('/pronostics', 'BetsController@index')->name('bets');
 
 Route::get('/profil', function () {
     return view('pages/profil');
@@ -32,6 +32,4 @@ Route::get('/contact', function () {
 });
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
