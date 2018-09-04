@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/home');
 });
+
+Route::get('/pronostics', function () {
+    return view('pages/bets');
+});
+
+Route::get('/stats', function () {
+    return view('pages/stats');
+});
+Route::get('/contact', function () {
+    return view('pages/contact');
+});
+

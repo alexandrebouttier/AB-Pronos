@@ -1,0 +1,200 @@
+/*========================== 01. GENERAL ========================== */
+
+body {
+    font-family: "Open-Sans";
+    background-color: #eeeeee;
+    height: 100vh;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.text-bold {
+    font-family: "Open-Sans-Bold";
+}
+
+.section-primary {
+    margin-top: 3em;
+}
+
+.page_content {
+    margin-top: 6em;
+}
+
+.section_title {
+    margin-top: 1em;
+}
+
+.shadow {
+    box-shadow: rgba(121, 121, 121, .35) 1px 20px 30px;
+}
+.green {
+    color:#28a745;
+}
+.red {
+    color: #dc3545;
+}
+.blue {
+    color: #138496;
+}
+/*========================== 02. POLICES ========================== */
+
+@font-face {
+    font-family: 'Londrina Solid';
+    src: url(../fonts/LondrinaSolid-Regular.ttf)
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    src: url(../fonts/OpenSans-Regular.ttf)
+}
+
+@font-face {
+    font-family: 'Open-Sans-Bold';
+    src: url(../fonts/OpenSans-Bold.ttf)
+}
+
+/*========================== 03.MENU ========================== */
+
+.navbar-light .navbar-brand {
+    font-family: "Londrina Solid";
+    font-weight: normal;
+    text-transform: initial;
+    font-size: 2em;
+    color: #c0392b;
+}
+
+.navbar {
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+}
+
+.navbar .nav-link {
+    font-family: "Open-Sans-Bold";
+    font-size: 0.95em;
+}
+
+.navbar a.btn {
+    margin: 0.5em;
+}
+
+/*========================== 04.JUMBOTRON ========================== */
+
+.jumbotron {
+    background-image: linear-gradient(141deg, #1f191a 0, #363636 71%, #46403f 100%);
+    color: white;
+    padding: 7rem 2rem;
+}
+
+/*========================== 05.TEAM ========================== */
+
+#stats_team .card-img {
+    width: 35%;
+    height: 100px;
+    margin-top: 1em;
+    border-radius: 100%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+#team .card-img {
+    width: 35%;
+    height: 100px;
+    margin-top: 1em;
+    border-radius: 100%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+#team .card {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+/*========================== 06.LASTRESULTS ========================== */
+
+.table-responsive {
+    background-color: white;
+    font-family: "Open-Sans-Bold";
+    box-shadow: rgba(121, 121, 121, .35) 1px 20px 30px;
+}
+
+.table thead th {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody {
+    font-size: 0.8em;
+}
+
+/*========================== 07. BETS ========================== */
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bet_post {
+    margin: 1em;
+    border-radius: 0px !important;
+    border: none;
+    box-shadow: rgba(121, 121, 121, .35) 1px 10px 20px;
+    background-color: #2E4358;
+}
+
+.bet_post .card-title {
+    font-size: 1.1em;
+}
+
+.bet_post .card-body {
+    color: white;
+    height: 5em !important;
+}
+
+.img-result {
+    height: 30px;
+}
+
+.sport_logo {
+    height: 20px;
+}
+
+/*========================== 08. LOGIN/REGISTER ========================== */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 8em auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"],
+input[type="password"] {
+    margin-bottom: 1em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+
+
