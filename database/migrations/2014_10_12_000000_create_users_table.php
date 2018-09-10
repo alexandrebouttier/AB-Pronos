@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('avatar');
+            $table->string('avatar')->default('avatar.png');
             $table->boolean('is_tipster')->default(false);
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
