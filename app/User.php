@@ -31,8 +31,8 @@ class User extends Authenticatable
 
     public function getTeam()
 	{
-        $team = App\User::where('is_tipster', 1)->get();
-        return $team;
+        $tipsters =\App\User::where('is_tipster', 1)->get();
+        return $tipsters;
            
                
 	}
