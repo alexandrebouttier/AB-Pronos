@@ -9,16 +9,16 @@
         <h2 class="text-center">Team</h2>
         <h5 class="text-center">Notre équipe de tipsters</h5>
         <div class="row">
-        @foreach ($team as $team)
+        @foreach ($tipsters as $tipster)
                     <div class="col-md-4">
                         <div class=" shadow wow slideInRight  card text-center animated"
                              style="width: 18rem; visibility: visible; animation-name: slideInRight;">
-                            <img class="card-img center" src="">
+                            <img class="card-img center" src="img/{{ $tipster -> avatar}}">
                             <div class="card-body">
                                 <h5 class="card-title text-bold">
-                                {{ $team -> name}}
+                                {{ $tipster -> name}}
                                 </h5>
-                                <a href="profil?tipster="" class="btn btn-outline-info my-2 my-sm-0">VOIR PROFIL & STATS</a>
+                                <a href="profil?tipster={{ $tipster -> name}}" class="btn btn-outline-info my-2 my-sm-0">VOIR PROFIL & STATS</a>
                             </div>
                         </div>
                     </div>
