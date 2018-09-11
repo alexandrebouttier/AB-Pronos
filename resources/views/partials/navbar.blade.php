@@ -27,11 +27,26 @@
                     <a class="nav-link" href="contact">Contact</a>
                 </li>
             </ul>
-
-            <a class="btn btn-primary my-2 my-sm-0" href="register" role="button">Inscription</a>
-            <a class="btn btn-outline-success my-2 my-sm-0" href="login" role="button">Connexion</a>
+            @guest
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="{{ route('login') }}" role="button">Connexion</a>
+                    <a class="btn btn-primary my-2 my-sm-0" href="{{ route('register') }}" role="button">Inscription</a>
+        @else
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{{ route('logout') }}">Déconnexion</a>
+                </div>
+            
+              </div>
+            
+        @endguest
+      
+           
         </div>
     </div>
     <!-- // Container -->
 </nav>
 <!-- // Fin Navbar -->
+
