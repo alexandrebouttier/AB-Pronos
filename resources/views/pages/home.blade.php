@@ -9,6 +9,7 @@
         <h2 class="text-center">Team</h2>
         <h5 class="text-center">Notre équipe de tipsters</h5>
         <div class="row">
+        @if ($nbTipsters>0)
         @foreach ($tipsters as $tipster)
                     <div class="col-md-4">
                         <div class=" shadow wow slideInRight  card text-center animated"
@@ -24,7 +25,11 @@
                     </div>
 
            @endforeach
-              
+           @else
+           <div class="center alert alert-primary" role="alert">
+                Oops , Il y a aucun tipsters pour le moment !
+            </div>
+           @endif
         </div>
         <!-- // row -->
     </div>
