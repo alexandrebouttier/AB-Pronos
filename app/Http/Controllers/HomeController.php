@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 
 class HomeController extends Controller
 {
     public function home(){
-        $nbTipsters =\App\User::where('is_tipster', 1)->count();
-        $tipsters = \App\User::where('is_tipster', 1)->get();
+        $nbTipsters =User::countTipsters();
+        $tipsters = User::getTeam();
         return view('pages/home', [
             'nbTipsters' => $nbTipsters,
             'tipsters' => $tipsters

@@ -29,12 +29,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getTeam()
-	{
-        $tipsters =\App\User::where('is_tipster', 1)->get();
-        return $tipsters;
-           
-               
-	}
+    
+    // Récupere et affiche tous les tipsters
+    public static function getTeam(){
+
+     return  User::where('is_tipster', 1)->get();   
+
+    }
+
+    // Retourne le nombre de tipsters
+    public static function countTipsters(){
+
+        return User::where('is_tipster', 1)->count();
+    }
    
 }
