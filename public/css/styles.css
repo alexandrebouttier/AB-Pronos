@@ -5,7 +5,9 @@ body {
     background-color: #eeeeee;
     height: 100vh;
 }
-
+h2 {
+    margin-top:1em;
+}
 .center {
     margin: 0 auto;
 }
