@@ -47,6 +47,7 @@
         <div class="table-responsive wow bounceInUp">
             <table class="table table-hover table-striped">
                 <thead>
+
                 <tr>
                     <th scope="col">Tipster</th>
                     <th></th>
@@ -58,10 +59,29 @@
                     <th scope="col">Gains</th>
                     <th scope="col">Résultat</th>
                 </tr>
-                </thead>
-                <tbody>
 
-             
+                </thead> 
+                <tbody>
+                        @if ($nbBets>0)
+                        @foreach ($bets as $bet)
+<tr>
+                        <td>Alexandre</td>
+                        <td>{{ $bet -> sport}}</td>
+                        <td>{{ $bet -> event}}</td>
+                        <td>{{ $bet -> date_event}}</td>
+                        <td>{{ $bet -> prognosis}}</td>
+                        <td>{{ $bet -> cost}}</td>
+                        <td>{{ $bet -> stake}}</td>
+                        <td></td>
+                        <td>{{ $bet -> result}}</td>
+                    </tr>
+                        @endforeach
+
+                        @else
+                        <div class="center alert alert-primary" role="alert">
+                             Oops , Il y a aucun pronostics !
+                         </div>
+                        @endif
 
                 </tbody>
             </table>

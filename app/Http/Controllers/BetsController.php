@@ -25,4 +25,6 @@ class BetsController extends Controller
     {
         return view('pages/bets');
     }
+
+
 }

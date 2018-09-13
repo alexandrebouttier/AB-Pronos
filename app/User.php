@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-  
+
     use Notifiable;
 
     /**
@@ -29,18 +29,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
-    // Récupere et affiche tous les tipsters
-    public static function getTeam(){
 
-     return  User::where('is_tipster', 1)->get();   
+    // Récupere et affiche tous les tipsters
+    public static function getTeam()
+    {
+
+        return User::where('is_tipster', 1)->get();
 
     }
 
     // Retourne le nombre de tipsters
-    public static function countTipsters(){
+    public static function countTipsters()
+    {
 
         return User::where('is_tipster', 1)->count();
     }
-   
+
 }
