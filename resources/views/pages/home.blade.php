@@ -19,7 +19,7 @@
                                 <h5 class="card-title text-bold">
                                 # {{ $tipster -> name}}
                                 </h5>
-                                <a href="profil?tipster={{ $tipster -> name}}" class="btn btn-outline-info my-2 my-sm-0">VOIR PROFIL & STATS</a>
+                                <a href="profil/{{ $tipster -> name}}" class="btn btn-outline-info my-2 my-sm-0">VOIR PROFIL & STATS</a>
                             </div>
                         </div>
                     </div>
