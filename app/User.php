@@ -47,5 +47,9 @@ class User extends Authenticatable
 
         return User::where('is_tipster', 1)->count();
     }
+    public static function getUsername($id)
+    {
+        return User::select('name')->where('id','$id')->first();
+    }
 
 }

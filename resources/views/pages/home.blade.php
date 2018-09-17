@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-
+                  
            @endforeach
            @else
            <div class="center alert alert-primary" role="alert">
@@ -64,9 +64,9 @@
                 <tbody>
                         @if ($nbBets>0)
                         @foreach ($bets as $bet)
-<tr>
-                        <td>Alexandre</td>
-                        <td>{{ $bet -> sport}}</td>
+            <tr>            
+                         <td>{{$bet->user->name}}</td>
+                        <td>{{$bet->getIconSport() }}</td>
                         <td>{{ $bet -> event}}</td>
                         <td>{{ $bet -> date_event}}</td>
                         <td>{{ $bet -> prognosis}}</td>
