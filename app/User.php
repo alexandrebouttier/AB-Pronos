@@ -28,7 +28,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function bet_simple()
+    {
+        return $this->hasMany(Bet_simple::class);
+    }
 
     // Récupere et affiche tous les tipsters
     public static function getTeam()

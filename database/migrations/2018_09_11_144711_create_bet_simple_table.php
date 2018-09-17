@@ -15,9 +15,6 @@ class CreateBetSimpleTable extends Migration
     {
         Schema::create('bet_simple', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('id')
-				  ->references('id')
-				  ->on('user');
             $table->string('event');
             $table->string('sport');
             $table->string('competition');
@@ -39,7 +36,7 @@ class CreateBetSimpleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bet_simple');
+        Schema::drop('bet_simple');
        
     }
 }

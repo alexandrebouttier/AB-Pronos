@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bet_simple extends Model
 {
     protected $table = 'Bet_simple';
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     // Retourne le nombre de paris cloturer
     public static function countBetsIsClosed()
     {
