@@ -26,10 +26,10 @@ class Bet_simple extends Model
     }
 
  
-    public static function getIconSport()
+    /* public static function getIconSport()
     {
-
-       
+    
+      
       if ($this->sport == "Football") {
           return '<img class="sport_logo" src="public/img/football.png" alt="">';
       }
@@ -37,7 +37,7 @@ class Bet_simple extends Model
         return '<img class="sport_logo" src="public/img/tennis.png" alt="">';
 
        } 
-    }
+    }*/
 
     public static function test(){
         $bet_combi = DB::table("bet_combi")

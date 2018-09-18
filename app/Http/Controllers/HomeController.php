@@ -18,19 +18,18 @@ class HomeController extends Controller
         $tipsters = User::getTeam();
         $bets = Bet_simple::getBetsIsClosed();
         $nbBets = Bet_simple:: countBetsIsClosed();
-        $sport = Bet_simple::getIconSport();
+        //$sport = Bet_simple::getIconSport();
         //$test = Bet_simple:: test();
       
-       // $username = User::getUsername();
+      
 
         return view('pages/home', [
             //'test' =>$test,
-            'sport'=> $sport,
+            //'sport'=> $sport,
             'nbBets' => $nbBets,
             'bets' => $bets,
             'nbTipsters' => $nbTipsters,
             'tipsters' => $tipsters,
-            //'username'=>$username
         ]);
     }
 

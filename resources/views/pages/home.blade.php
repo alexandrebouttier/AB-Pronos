@@ -17,7 +17,7 @@
                             <img class="card-img center" src="img/{{ $tipster -> avatar}}">
                             <div class="card-body">
                                 <h5 class="card-title text-bold">
-                                # {{ $tipster -> name}}
+                                # {{  ucfirst($tipster -> name)}}
                                 </h5>
                                 <a href="profil/{{ $tipster -> name}}" class="btn btn-outline-info my-2 my-sm-0">VOIR PROFIL & STATS</a>
                             </div>
@@ -59,14 +59,14 @@
                     <th scope="col">Gains</th>
                     <th scope="col">Résultat</th>
                 </tr>
-
+              
                 </thead> 
                 <tbody>
                         @if ($nbBets>0)
                         @foreach ($bets as $bet)
-            <tr>            
-                         <td>{{$bet->user->name}}</td>
-                        <td>{{$bet->getIconSport() }}</td>
+            <tr>         
+                        <td><a href="profil/{{$bet->user->name}}">{{ ucfirst($bet->user->name)}}</a></td>
+                        <td>{{ $bet -> sport}}</td>
                         <td>{{ $bet -> event}}</td>
                         <td>{{ $bet -> date_event}}</td>
                         <td>{{ $bet -> prognosis}}</td>
