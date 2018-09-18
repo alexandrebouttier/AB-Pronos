@@ -73,7 +73,7 @@
                         <td>{{ $bet -> cost}}</td>
                         <td>{{ $bet -> stake}}</td>
                         <td></td>
-                        <td></td>
+                        <td><img class="img-result" src="img/{{ $bet->getIconResult()}}.png" alt=""></td>
                     </tr>
                         @endforeach
 

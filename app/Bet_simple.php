@@ -47,6 +47,26 @@ class Bet_simple extends Model
         return $icon;
     }
 
+     // Retourne l'icone du résultat
+     public function getIconResult()
+     {
+         $icon = '';
+         switch ($this->result)
+         {
+             case 'Gagné':
+                 $icon = 'win';
+                 break;
+             case 'Perdu':
+                 $icon = 'lose';
+                 break; 
+            case 'Rembourser':
+                 $icon = 'cancel';
+                 break;          
+         }
+         return $icon;
+     }
+ 
+
     public static function test(){
         $bet_combi = DB::table("bet_combi")
     ->select("bet_combi.event");
