@@ -64,16 +64,16 @@
                 <tbody>
                         @if ($nbBets>0)
                         @foreach ($bets as $bet)
-            <tr>         
+            <tr>        
                         <td><a href="profil/{{$bet->user->name}}">{{ ucfirst($bet->user->name)}}</a></td>
-                        <td>{{ $bet -> sport}}</td>
-                        <td>{{ $bet -> event}}</td>
+                        <td><img class="sport_logo" src="img/{{ $bet->getIconSport()}}.png" alt=""></td>
+                        <td> {{ $bet -> event}}</td>
                         <td>{{ $bet -> date_event}}</td>
                         <td>{{ $bet -> prognosis}}</td>
                         <td>{{ $bet -> cost}}</td>
                         <td>{{ $bet -> stake}}</td>
                         <td></td>
-                        <td>{{ $bet -> result}}</td>
+                        <td></td>
                     </tr>
                         @endforeach
 

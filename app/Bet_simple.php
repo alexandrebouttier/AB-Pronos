@@ -25,19 +25,27 @@ class Bet_simple extends Model
 
     }
 
- 
-    /* public static function getIconSport()
+ // Retourne l'icone du sport
+    public function getIconSport()
     {
-    
-      
-      if ($this->sport == "Football") {
-          return '<img class="sport_logo" src="public/img/football.png" alt="">';
-      }
-       elseif ($this->sport == "Tennis") {
-        return '<img class="sport_logo" src="public/img/tennis.png" alt="">';
-
-       } 
-    }*/
+        $icon = '';
+        switch ($this->sport)
+        {
+            case 'Football':
+                $icon = 'football';
+                break;
+            case 'Tennis':
+                $icon = 'tennis';
+                break;    
+        }
+        switch ($this->type)
+        {
+            case 'Combiné':
+                $icon = 'combi';
+                break;
+        }
+        return $icon;
+    }
 
     public static function test(){
         $bet_combi = DB::table("bet_combi")
