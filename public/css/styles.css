@@ -1,12 +1,13 @@
 /*========================== 01. GENERAL ========================== */
 
 body {
-    font-family: "Open-Sans";
+    font-family: 'Roboto-Regular';
     background-color: #eeeeee;
     height: 100vh;
 }
 h2 {
     margin-top:1em;
+    font-family: 'Oswald';
 }
 .center {
     margin: 0 auto;
@@ -41,6 +42,14 @@ h2 {
     color: #138496;
 }
 /*========================== 02. POLICES ========================== */
+@font-face {
+    font-family: 'Oswald';
+    src: url(../fonts/Oswald-Regular.ttf)
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../fonts/Roboto-Regular.ttf)
+}
 
 @font-face {
     font-family: 'Londrina Solid';
@@ -73,8 +82,8 @@ h2 {
 }
 
 .navbar .nav-link {
-    font-family: "Open-Sans-Bold";
-    font-size: 0.95em;
+    font-family: 'Oswald';
+    font-size: 1.1em;
 }
 
 .navbar a.btn {
@@ -88,7 +97,14 @@ h2 {
     color: white;
     padding: 7rem 2rem;
 }
-
+.jumbotron h1{
+    font-family: 'Oswald';
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.jumbotron .lead{
+    font-family: 'Roboto-Regular';
+}
 /*========================== 05.TEAM ========================== */
 
 #stats_team .card-img {
