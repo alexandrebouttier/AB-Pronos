@@ -67,12 +67,13 @@
             <tr>        
                         <td><a href="profil/{{$bet->user->name}}">{{ ucfirst($bet->user->name)}}</a></td>
                         <td><img class="sport_logo" src="img/{{ $bet->getIconSport()}}.png" alt=""></td>
-                        <td>{{str_limit($bet -> event, 45, ' [...]')}}</td>
+                        <td>{{ucfirst(str_limit($bet -> event, 45, ' [...]'))}}</td>
                         <td>{{ $bet -> date_event}}</td>
-                        <td>{{str_limit($bet -> prognosis, 45, ' [...]')}}</td>
+                        <td>{{ucfirst(str_limit($bet -> prognosis, 45, ' [...]'))}}</td>
                         <td>{{ $bet -> cost}}</td>
                         <td>{{ $bet -> stake}}</td>
                         <td></td>
+                   
                         <td><img class="img-result" src="img/{{ $bet->getIconResult()}}.png" alt=""></td>
                     </tr>
                         @endforeach
