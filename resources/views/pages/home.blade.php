@@ -8,6 +8,7 @@
     <div class="container">
         <h2 class="text-center">Team</h2>
         <h5 class="text-center">Notre équipe de tipsters</h5>
+        
         <div class="row">
         @if ($nbTipsters>0)
         @foreach ($tipsters as $tipster)
