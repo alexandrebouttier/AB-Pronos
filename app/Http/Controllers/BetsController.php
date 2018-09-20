@@ -28,8 +28,6 @@ class BetsController extends Controller
     {
         $bets = Bet_simple::getBetsIsOpen();
         return view('pages/bets', [
-         
-          
             'bets' => $bets,
             
         ]);

@@ -27,8 +27,15 @@ class Bet_simple extends Model
      // Récupere les paris en cours"
      public static function getBetsIsOpen()
      {
+        $req = DB::select('SELECT id,event,created_at,type,cost,date_event
+        FROM bet_simple   WHERE result ="En attente"
+        
+        UNION ALL
+        
+        SELECT id ,event,created_at,type,cost,date_event
+        FROM bet_combi WHERE result ="En attente" ');
     
-      
+        return $req;
      }
    
  // Retourne l'icone du sport
