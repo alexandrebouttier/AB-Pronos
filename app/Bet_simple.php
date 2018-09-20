@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Bet_simple extends Model
-{
+{ 
     protected $table = 'Bet_simple';
+ 
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -28,11 +29,11 @@ class Bet_simple extends Model
      public static function getBetsIsOpen()
      {
         $bet_combi = DB::table('bet_combi')
-        ->select(\DB::raw('event,id,user_id,created_at,type,cost,date_event'))
+        ->select(\DB::raw('event,event_2,event_3,event_4,id,user_id,created_at,type,cost,date_event'))
         ->where('result', '=', "En attente");
         
         $bet_simple = DB::table('bet_simple')
-        ->select(\DB::raw('event,id,user_id,created_at,type,cost,date_event'))
+        ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,user_id,created_at,type,cost,date_event'))
         ->where('result', '=', "En attente")
         ->unionAll($bet_combi)
         ->simplePaginate(6);
@@ -82,14 +83,5 @@ class Bet_simple extends Model
      }
  
 
-    public static function test(){
-        $bet_combi = DB::table("bet_combi")
-    ->select("bet_combi.event");
-        $bet_simple = DB::table("bet_simple")
-    ->select("bet_simple.event")
    
-    ->unionAll($bet_combi)
-    ->get();
-    print_r($bet_simple);
-    }
 }
