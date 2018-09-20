@@ -22,9 +22,15 @@ class Bet_simple extends Model
     public static function getBetsIsClosed()
     {
         return Bet_simple::where('result', '<>', "En attente")->orderBy('date_event', 'desc')->take(10)->get();
-
+     
     }
-
+     // Récupere les paris en cours"
+     public static function getBetsIsOpen()
+     {
+    
+      
+     }
+   
  // Retourne l'icone du sport
     public function getIconSport()
     {

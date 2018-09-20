@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Bet_simple;
+
 class BetsController extends Controller
 {
     /**
@@ -23,7 +26,13 @@ class BetsController extends Controller
      */
     public function index()
     {
-        return view('pages/bets');
+        $bets = Bet_simple::getBetsIsOpen();
+        return view('pages/bets', [
+         
+          
+            'bets' => $bets,
+            
+        ]);
     }
 
 
