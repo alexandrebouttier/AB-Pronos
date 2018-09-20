@@ -34,8 +34,8 @@ class Bet_simple extends Model
         $bet_simple = DB::table('bet_simple')
         ->select(\DB::raw('event,id,user_id,created_at,type,cost,date_event'))
         ->where('result', '=', "En attente")
-            ->unionAll($bet_combi)
-            ->get();
+        ->unionAll($bet_combi)
+        ->simplePaginate(6);
         return $bet_simple;    
      }
    

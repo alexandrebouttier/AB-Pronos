@@ -28,10 +28,11 @@
                 @endforeach
                 
 
-                
+              
 
             <!-- // flex_row -->  
     </div>
+    {{ $bets->links() }}
     <!-- // container -->  
 </div>
 
