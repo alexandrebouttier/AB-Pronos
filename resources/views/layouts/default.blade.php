@@ -66,19 +66,19 @@
             colorByPoint: true,
             data: [{
                 name: 'Paris gagnants',
-                y:   {{$nbBetsWin}},
+                y:   {{$bet->countBetsForResult("Gagné")}},
                 sliced: true,
                 color: '#2ecc71',
                 selected: true
             }, {
                 color: '#e74c3c',
                 name: 'Paris perdants',
-                y: {{ $nbBetsLose}}
+                y: {{$bet->countBetsForResult("Perdu")}}
             },
                 {
                     color: 'orange',
                     name: 'Paris rembourser/annuler',
-                    y:   {{$nbBetsRefund}}
+                    y:  {{$bet->countBetsForResult("Rembourser")}}
                 }]
         }]
     });
@@ -118,12 +118,12 @@
                 {
                     color: '#27ae60',
                     name: 'Football',
-                    y: 10
+                    y: {{$bet->countBetsForSport("Football")}}
                 },
                 {
                     color: '#f1c40f',
                     name: 'Tennis',
-                    y: 20
+                    y: {{$bet->countBetsForSport("Tennis")}}
                 }]
         }]
     });

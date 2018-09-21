@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
-
-use App\User;
 use App\Bet_simple;
 
 class BetsController extends Controller
@@ -30,9 +26,8 @@ class BetsController extends Controller
         $bets = Bet_simple::getBetsIsOpen();
         return view('pages/bets', [
             'bets' => $bets,
-            
+
         ]);
     }
-
 
 }

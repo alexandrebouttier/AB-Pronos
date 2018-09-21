@@ -6,67 +6,57 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Bet_simple extends Model
-{ 
+{
     protected $table = 'Bet_simple';
- 
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
     // Retourne le nombre total de pronostics
-     public static function countAllBets()
-       {
+    public static function countAllBets()
+    {
         $bet_combi = DB::table('bet_combi')
-        ->count();
+            ->count();
 
         $bet_simple = DB::table('bet_simple')
-        ->count();
+            ->count();
 
-        $nbBets= $bet_combi + $bet_simple;
-       return $nbBets;
-       }
-   
-  // Retourne le nombre total de pronostics gagnant
-     public static function countBetsWin()
-     {
-      $bet_combi = DB::table('bet_combi')
-      ->where('result', '=', "Gagné")
-      ->count();
+        $nbBets = $bet_combi + $bet_simple;
+        return $nbBets;
+    }
 
-      $bet_simple = DB::table('bet_simple')
-      ->where('result', '=', "Gagné")
-      ->count();
-      $nbBets= $bet_combi + $bet_simple;
-    return $nbBets;
-     }
-  // Retourne le nombre total de pronostics perdu
-  public static function countBetsLose()
-  {
-   $bet_combi = DB::table('bet_combi')
-   ->where('result', '=', "Perdu")
-   ->count();
+    // Retourne le nombres de paris selon le résultat "Gagné" , "Perdu" ,"Rembourser"
+    public function countBetsForResult($result)
+    {
+        $bet_combi = DB::table('bet_combi')
+            ->where('result', '=', "$result")
+            ->count();
 
-   $bet_simple = DB::table('bet_simple')
-   ->where('result', '=', "Perdu")
-   ->count();
-   $nbBets= $bet_combi + $bet_simple;
- return $nbBets;
-  }
+        $bet_simple = DB::table('bet_simple')
+            ->where('result', '=', "$result")
+            ->count();
+        $nbBets = $bet_combi + $bet_simple;
+        return $nbBets;
+    }
+    // Retourne le nombres de paris selon le sport "Football" , "Tennis"
+    public function countBetsForSport($sport)
+    {
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('sport,sport_2,sport_3,sport_4'))
+            ->where('sport', '=', "$sport")
+            ->where('sport_2', '=', "$sport")
+            ->where('sport_3', '=', "$sport")
+            ->where('sport_4', '=', "$sport")
+            ->count();
+        $bet_simple = DB::table('bet_simple')
+            ->where('sport', '=', "$sport")
+            ->count();
+        $nbBets = $bet_combi + $bet_simple;
+        return $nbBets;
+    }
 
-   // Retourne le nombre total de pronostics rembourser/annuler
-   public static function countBetsRefund()
-   {
-    $bet_combi = DB::table('bet_combi')
-    ->where('result', '=', "Rembourser")
-    ->count();
- 
-    $bet_simple = DB::table('bet_simple')
-    ->where('result', '=', "Rembourser")
-    ->count();
-    $nbBets= $bet_combi + $bet_simple;
-  return $nbBets;
-   }
     // Retourne le nombre de paris cloturer
     public static function countBetsIsClosed()
     {
@@ -77,39 +67,36 @@ class Bet_simple extends Model
     public static function getBetsIsClosed()
     {
         return Bet_simple::where('result', '<>', "En attente")->orderBy('date_event', 'desc')->take(10)->get();
-     
+
     }
-     // Récupere les paris en cours"
-     public static function getBetsIsOpen()
-     {
+    // Récupere les paris en cours"
+    public static function getBetsIsOpen()
+    {
         $bet_combi = DB::table('bet_combi')
-        ->select(\DB::raw('event,event_2,event_3,event_4,id,user_id,created_at,type,cost,date_event'))
-        ->where('result', '=', "En attente");
-        
+            ->select(\DB::raw('event,event_2,event_3,event_4,id,user_id,created_at,type,cost,date_event'))
+            ->where('result', '=', "En attente");
+
         $bet_simple = DB::table('bet_simple')
-        ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,user_id,created_at,type,cost,date_event'))
-        ->where('result', '=', "En attente")
-        ->unionAll($bet_combi)
-        ->simplePaginate(6);
-        return $bet_simple;    
-     }
-   
- 
- // Retourne l'icone du sport
+            ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,user_id,created_at,type,cost,date_event'))
+            ->where('result', '=', "En attente")
+            ->unionAll($bet_combi)
+            ->simplePaginate(6);
+        return $bet_simple;
+    }
+
+    // Retourne l'icone du sport
     public function getIconSport()
     {
         $icon = '';
-        switch ($this->sport)
-        {
+        switch ($this->sport) {
             case 'Football':
                 $icon = 'football';
                 break;
             case 'Tennis':
                 $icon = 'tennis';
-                break;    
+                break;
         }
-        switch ($this->type)
-        {
+        switch ($this->type) {
             case 'Combiné':
                 $icon = 'combi';
                 break;
@@ -117,25 +104,22 @@ class Bet_simple extends Model
         return $icon;
     }
 
-     // Retourne l'icone du résultat
-     public function getIconResult()
-     {
-         $icon = '';
-         switch ($this->result)
-         {
-             case 'Gagné':
-                 $icon = 'win';
-                 break;
-             case 'Perdu':
-                 $icon = 'lose';
-                 break; 
+    // Retourne l'icone du résultat
+    public function getIconResult()
+    {
+        $icon = '';
+        switch ($this->result) {
+            case 'Gagné':
+                $icon = 'win';
+                break;
+            case 'Perdu':
+                $icon = 'lose';
+                break;
             case 'Rembourser':
-                 $icon = 'cancel';
-                 break;          
-         }
-         return $icon;
-     }
- 
+                $icon = 'cancel';
+                break;
+        }
+        return $icon;
+    }
 
-   
 }
