@@ -13,23 +13,23 @@
             <table class="table table-hover table-striped">
                 <thead>
 
-                <tr>
-                    <th></th>
-                    <th scope="col">Evénement</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Pronostic</th>
-                    <th scope="col">Côte</th>
-                    <th scope="col">Mise</th>
-                    <th scope="col">Gains</th>
-                    <th scope="col">Résultat</th>
-                </tr>
-              
-                </thead> 
+                    <tr>
+                        <th></th>
+                        <th scope="col">Evénement</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Pronostic</th>
+                        <th scope="col">Côte</th>
+                        <th scope="col">Mise</th>
+                        <th scope="col">Gains</th>
+                        <th scope="col">Résultat</th>
+                    </tr>
+
+                </thead>
                 <tbody>
-                        @if ($nbBets>0)
-                        @foreach ($bets as $bet)
-            <tr>        
-                        
+                    @if ($nbBets>0)
+                    @foreach ($bets as $bet)
+                    <tr>
+
                         <td><img class="sport_logo" src="img/{{ $bet->getIconSport()}}.png" alt=""></td>
                         <td>{{ucfirst(str_limit($bet -> event, 45, ' [...]'))}}</td>
                         <td>{{ $bet -> date_event}}</td>
@@ -37,16 +37,16 @@
                         <td>{{ $bet -> cost}}</td>
                         <td>{{ $bet -> stake}}</td>
                         <td></td>
-                   
+
                         <td><img class="img-result" src="img/{{ $bet->getIconResult()}}.png" alt=""></td>
                     </tr>
-                        @endforeach
+                    @endforeach
 
-                        @else
-                        <div class="center alert alert-primary" role="alert">
-                             Oops , Il y a aucun pronostics !
-                         </div>
-                        @endif
+                    @else
+                    <div class="center alert alert-primary" role="alert">
+                        Oops , Il y a aucun pronostics !
+                    </div>
+                    @endif
 
                 </tbody>
             </table>
@@ -54,7 +54,8 @@
         <!-- // table-responsive -->
 
         <div style="margin-top:3em; margin-bottom:3em;" class="text-center">
-            <a href="{{ url ('/pronostics') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">Voir les pronostics en
+            <a href="{{ url ('/pronostics') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">Voir les pronostics
+                en
                 cours</a>
         </div>
 
@@ -70,21 +71,37 @@
         <h5 class="text-center">Mes stats de mes pronostics</h5>
         <div class="row">
             <div class="col-md-4">
-                <div id="stats_reussite" class="shadow"
-                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+                <div id="stats_reussite" class="shadow" style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
             </div>
             <div class="col-md-4">
-                <div id="type_pari" class="shadow"
-                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+                <div id="type_pari" class="shadow" style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
             </div>
             <div class="col-md-4">
-                <div id="stats_sport" class="shadow"
-                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+                <div id="stats_sport" class="shadow" style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
             </div>
         </div>
 
 
-    </section>
+</section>
+
+<section id="ads_subscription">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-6 ">
+                    <img  src="https://www.teambet.fr/wp-content/uploads/2018/05/vip.png" alt="">
+                </div>
+
+                <div class="col-md-6">
+                    <h2>Inscription 100% gratuite</h2>
+                    <p>Vous n'avez absolument rien à payer au moment de votre inscription.<br> Un simple formulaire
+                        d'inscription et le tour est joué !<br> Que demander de mieux ?
+                    </p>
+                    <a href="{{ url ('/register') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">S'inscrire</a>
+                </div>
+        </div>
+    </div>
+
+</section>
 
 
 @endsection
