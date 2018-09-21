@@ -26,7 +26,18 @@ class Bet_simple extends Model
         $nbBets = $bet_combi + $bet_simple;
         return $nbBets;
     }
-
+    // Retourne le nombres de paris selon le type "Simple" , "Combiné"
+    public function countBetsForType($type)
+    {
+        if ($type == "Simple") {
+            $table = "bet_simple";
+        } elseif ($type == "Combiné") {
+            $table = "bet_combi";
+        }
+        $nb = DB::table($table)
+        ->count();
+        return $nb;
+    }
     // Retourne le nombres de paris selon le résultat "Gagné" , "Perdu" ,"Rembourser"
     public function countBetsForResult($result)
     {
