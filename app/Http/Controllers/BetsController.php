@@ -23,8 +23,10 @@ class BetsController extends Controller
      */
     public function index()
     {
+     
         $bets = Bet_simple::getBetsIsOpen();
         return view('pages/bets', [
+         
             'bets' => $bets,
 
         ]);
