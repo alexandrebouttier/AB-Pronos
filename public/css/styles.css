@@ -16,7 +16,10 @@ h2 {
 .text-bold {
     font-family: "Open-Sans-Bold";
 }
-
+.bg-electro{
+    background-color: #2f3640;
+    color: white;
+}
 .section-primary {
     margin-top: 3em;
 }
@@ -68,7 +71,7 @@ h2 {
 
 /*========================== 03.MENU ========================== */
 
-.navbar-light .navbar-brand {
+.navbar-dark .navbar-brand {
     font-family: "Londrina Solid";
     font-weight: normal;
     text-transform: initial;
@@ -79,6 +82,7 @@ h2 {
 .navbar {
     text-transform: uppercase;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+   
 }
 
 .navbar .nav-link {
