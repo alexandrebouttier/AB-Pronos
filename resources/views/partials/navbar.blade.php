@@ -13,15 +13,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/') }}">Accueil</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#team">Team</a>
-                </li>
+              
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/pronostics') }}">Pronostics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="stats">Stats</a>
+                    <a class="nav-link" href="{{ url ('/#stats') }}">Stats</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact">Contact</a>

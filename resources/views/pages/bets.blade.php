@@ -26,7 +26,6 @@
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Bet N° {{$bet-> id}}</li>
-                        <li class="list-group-item">Tipster :{{$bet-> user_id}} </li>
                         <li class="list-group-item">Publié le : 
                         {{  date("m/d/Y à H:i", strtotime($bet->created_at))}}</li>
                         <li class="list-group-item">Type de pari : {{$bet-> type}}</li>
