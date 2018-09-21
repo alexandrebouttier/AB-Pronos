@@ -43,7 +43,7 @@
             enabled: false
         },
         title: {
-            text: 'Taux de réussite pour  pronostics'
+            text: 'Taux de réussite pour {{ $nbAllBets}}  pronostics'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -66,19 +66,19 @@
             colorByPoint: true,
             data: [{
                 name: 'Paris gagnants',
-                y:   10,
+                y:   {{$nbBetsWin}},
                 sliced: true,
                 color: '#2ecc71',
                 selected: true
             }, {
                 color: '#e74c3c',
                 name: 'Paris perdants',
-                y:  20
+                y: {{ $nbBetsLose}}
             },
                 {
                     color: 'orange',
                     name: 'Paris rembourser/annuler',
-                    y:   5
+                    y:   {{$nbBetsRefund}}
                 }]
         }]
     });

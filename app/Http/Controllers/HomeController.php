@@ -14,20 +14,23 @@ class HomeController extends Controller
     public function home()
     {
     
-        $nbTipsters = User::countTipsters();
-        $tipsters = User::getTeam();
         $bets = Bet_simple::getBetsIsClosed();
         $nbBets = Bet_simple:: countBetsIsClosed();
+        $nbAllBets = Bet_simple::countAllBets();
+        $nbBetsWin= Bet_simple::countBetsWin();
+        $nbBetsLose= Bet_simple::countBetsLose();
+        $nbBetsRefund = Bet_simple::countBetsRefund();
     
       
       
 
         return view('pages/home', [
-         
+            'nbBetsRefund'=>$nbBetsRefund,
+            'nbBetsLose'=>$nbBetsLose,
+            'nbBetsWin' =>$nbBetsWin,
+            'nbAllBets' => $nbAllBets,
             'nbBets' => $nbBets,
             'bets' => $bets,
-            'nbTipsters' => $nbTipsters,
-            'tipsters' => $tipsters,
         ]);
     }
 

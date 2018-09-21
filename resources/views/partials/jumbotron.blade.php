@@ -1,12 +1,9 @@
 <!-- Début Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1>TeamBet</h1>
-        <p class="lead">Team-bet est une plateforme qui regroupe plusieurs tipsters en paris sportifs , ont vous partage
-            nos meilleurs pronostics
-            , pour que vous soyer enfin gagnant aux paris sportifs , retrouver des pronostics pour différents sport
-            comme
-            le football , et le tennis.</p>
+        <h1>ABProno</h1>
+        <p class="lead">Je partage & analyse pour vous des dizaines de matchs pour dénicher les matchs à gros potentiel. Je mets ainsi à votre disposition mes pronostics de paris sportifs , en vous proposant mes sélections football qui vous feront enfin gagner.
+           <br> Un seul objectif : VOUS FAIRE GAGNER !.</p>
     </div>
 </div>
 <!-- // Fin Jumbotron -->

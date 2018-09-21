@@ -13,6 +13,60 @@ class Bet_simple extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Retourne le nombre total de pronostics
+     public static function countAllBets()
+       {
+        $bet_combi = DB::table('bet_combi')
+        ->count();
+
+        $bet_simple = DB::table('bet_simple')
+        ->count();
+
+        $nbBets= $bet_combi + $bet_simple;
+       return $nbBets;
+       }
+   
+  // Retourne le nombre total de pronostics gagnant
+     public static function countBetsWin()
+     {
+      $bet_combi = DB::table('bet_combi')
+      ->where('result', '=', "Gagné")
+      ->count();
+
+      $bet_simple = DB::table('bet_simple')
+      ->where('result', '=', "Gagné")
+      ->count();
+      $nbBets= $bet_combi + $bet_simple;
+    return $nbBets;
+     }
+  // Retourne le nombre total de pronostics perdu
+  public static function countBetsLose()
+  {
+   $bet_combi = DB::table('bet_combi')
+   ->where('result', '=', "Perdu")
+   ->count();
+
+   $bet_simple = DB::table('bet_simple')
+   ->where('result', '=', "Perdu")
+   ->count();
+   $nbBets= $bet_combi + $bet_simple;
+ return $nbBets;
+  }
+
+   // Retourne le nombre total de pronostics rembourser/annuler
+   public static function countBetsRefund()
+   {
+    $bet_combi = DB::table('bet_combi')
+    ->where('result', '=', "Rembourser")
+    ->count();
+ 
+    $bet_simple = DB::table('bet_simple')
+    ->where('result', '=', "Rembourser")
+    ->count();
+    $nbBets= $bet_combi + $bet_simple;
+  return $nbBets;
+   }
     // Retourne le nombre de paris cloturer
     public static function countBetsIsClosed()
     {
