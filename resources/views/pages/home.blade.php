@@ -68,5 +68,23 @@
     <div class="container">
         <h2 class="text-center">Mes statistiques</h2>
         <h5 class="text-center">Mes stats de mes pronostics</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <div id="stats_reussite" class="shadow"
+                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+            </div>
+            <div class="col-md-4">
+                <div id="type_pari" class="shadow"
+                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+            </div>
+            <div class="col-md-4">
+                <div id="stats_sport" class="shadow"
+                     style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
+            </div>
+        </div>
+
+
     </section>
+
+
 @endsection

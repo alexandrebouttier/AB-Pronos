@@ -31,6 +31,148 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+<script>
+    Highcharts.chart('stats_reussite', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Taux de réussite pour  pronostics'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Taux',
+            colorByPoint: true,
+            data: [{
+                name: 'Paris gagnants',
+                y:   10,
+                sliced: true,
+                color: '#2ecc71',
+                selected: true
+            }, {
+                color: '#e74c3c',
+                name: 'Paris perdants',
+                y:  20
+            },
+                {
+                    color: 'orange',
+                    name: 'Paris rembourser/annuler',
+                    y:   5
+                }]
+        }]
+    });
+    Highcharts.chart('stats_sport', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Sports les plus joué'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Taux',
+            colorByPoint: true,
+            data: [
+                {
+                    color: '#27ae60',
+                    name: 'Football',
+                    y: 10
+                },
+                {
+                    color: '#f1c40f',
+                    name: 'Tennis',
+                    y: 20
+                }]
+        }]
+    });
+    Highcharts.chart('type_pari', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        }, credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Types de paris'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Taux',
+            colorByPoint: true,
+            data: [
+                {
+                    color: '#2c3e50',
+                    name: 'Combiné',
+                    y:  20
+                },
+                {
+                    color: '#2980b9',
+                    name: 'Simple',
+                    y:  10
+                }]
+        }]
+    });
+</script>
+
 </body>
 
 </html>
