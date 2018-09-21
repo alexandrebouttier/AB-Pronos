@@ -17,12 +17,6 @@ Auth::routes();
 
 Route::get('/pronostics', 'BetsController@index')->name('bets');
 
-Route::get('/profil/{tipster}', 'ProfilController@profil')->name('profil');
-
-Route::get('/stats', function () {
-    return view('pages/stats');
-});
-
 Route::get('/contact', function () {
     return view('pages/contact');
 });
