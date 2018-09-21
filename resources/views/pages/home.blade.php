@@ -4,6 +4,32 @@
 
 @include('partials/jumbotron')
 
+<!-- Début Section whychoose -->
+<section id="whychoose">
+    <div class="container">
+        <h2 class="text-center">Pourquoi choisir ABProno ?</h2>
+        <h5 class="text-center">Les bonnes raisons de me suivre</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bloc"> <img class="img-fluid" src="img/vip.png">
+                    <p>Accédez gratuitement à mes pronostics</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bloc"> <img class="img-fluid" src="img/mail.png">
+                    <p>Recevez un e-mail à chaque nouveau pronostic</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bloc"> <img class="img-fluid" src="img/stats.png">
+                    <p>Accéder à tout l'historique des pronostics publié ainsi que mes statistiques</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Fin Section whychoose -->
+
 <!-- Début Section lastbets table -->
 <section>
     <div class="container">
@@ -64,7 +90,9 @@
     <!-- // container -->
 
 </section>
+<!-- // Fin Section lastbets table -->
 
+<!-- Début Section stats -->
 <section id="stats">
     <div class="container">
         <h2 class="text-center">Statistiques</h2>
@@ -80,28 +108,29 @@
                 <div id="stats_sport" class="shadow" style="min-width:300px; max-width: 350px; height: 350px;  margin: 0 auto; margin-bottom:2em;"></div>
             </div>
         </div>
-
-
 </section>
 
+<!-- // Fin Section stats -->
+
+<!-- Début Section ads_subscription -->
 <section id="ads_subscription">
     <div class="container">
         <div class="row">
-                <div class="col-md-6 ">
-                    <img  src="https://www.teambet.fr/wp-content/uploads/2018/05/vip.png" alt="">
-                </div>
+            <div class="col-md-6 ">
+                <img src="img/vip.png" alt="">
+            </div>
 
-                <div class="col-md-6">
-                    <h2>Inscription 100% gratuite</h2>
-                    <p>Vous n'avez absolument rien à payer au moment de votre inscription.<br> Un simple formulaire
-                        d'inscription et le tour est joué !<br> Que demander de mieux ?
-                    </p>
-                    <a href="{{ url ('/register') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">S'inscrire</a>
-                </div>
+            <div class="col-md-6">
+                <h2>Inscription 100% gratuite</h2>
+                <p>Vous n'avez absolument rien à payer au moment de votre inscription.<br> Un simple formulaire
+                    d'inscription et le tour est joué !<br> Que demander de mieux ?
+                </p>
+                <a href="{{ url ('/register') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">S'inscrire</a>
+            </div>
         </div>
     </div>
 
 </section>
-
+<!-- // Fin Section ads_subscription -->
 
 @endsection
