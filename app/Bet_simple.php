@@ -75,7 +75,7 @@ class Bet_simple extends Model
     }
 
     // Récupere les paris cloturer "10 derniers"
- 
+
     public static function getBetsIsClosed()
     {
         $bet_combi = DB::table('bet_combi')
@@ -87,7 +87,6 @@ class Bet_simple extends Model
             ->get();
         return $bet_simple;
     }
-
 
     // Récupere les paris en cours"
     public static function getBetsIsOpen()
@@ -105,7 +104,7 @@ class Bet_simple extends Model
     }
 
     // Retourne l'icone du sport
-    public  function getIconSport()
+    public function getIconSport()
     {
         $icon = '';
         switch ($this->sport) {
@@ -141,5 +140,23 @@ class Bet_simple extends Model
         }
         return $icon;
     }
+    
+    // Retourne les gains
+    public function getGains()
+    {
+        $result = $this->result;
+        $stake = $this->stake;
+        $cost = $this->cost;
 
+        if ($result == "Gagné") {
+            $gains = $stake * $cost;
+        } elseif ($result == "Perdu") {
+            $gains = -$stake;
+        } else {
+            $gains = $stake;
+        }
+        $gains = number_format($gains, 2);
+
+        return $gains;
+    }
 }

@@ -62,7 +62,7 @@
                         <td>{{ucfirst(str_limit($bet -> prognosis, 45, ' [...]'))}}</td>
                         <td>{{ $bet -> cost}}</td>
                         <td>{{ $bet -> stake}}</td>
-                        <td></td>
+                        <td>{{ $bet->getGains()}}</td>
 
                         <td><img class="img-result" src="img/{{ $bet->getIconResult()}}.png" alt=""></td>
                     </tr>
