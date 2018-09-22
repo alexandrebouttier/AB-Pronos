@@ -7,7 +7,7 @@
 <!-- Début Section whychoose -->
 <section id="whychoose">
     <div class="container">
-        <h2 class="text-center">Pourquoi choisir ABProno ?</h2>
+        <h2 class="text-center">Pourquoi choisir ABPronos ?</h2>
         <h5 class="text-center">Les bonnes raisons de me suivre</h5>
         <div class="row">
             <div class="col-md-4">
