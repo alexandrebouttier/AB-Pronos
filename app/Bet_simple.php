@@ -35,7 +35,7 @@ class Bet_simple extends Model
             $table = "bet_combi";
         }
         $nb = DB::table($table)
-        ->count();
+            ->count();
         return $nb;
     }
     // Retourne le nombres de paris selon le résultat "Gagné" , "Perdu" ,"Rembourser"
@@ -75,11 +75,19 @@ class Bet_simple extends Model
     }
 
     // Récupere les paris cloturer "10 derniers"
+ 
     public static function getBetsIsClosed()
     {
-        return Bet_simple::where('result', '<>', "En attente")->orderBy('date_event', 'desc')->take(10)->get();
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('event,sport,type,result,date_event,stake,cost,null AS prognosis '))
+            ->where('result', '<>', "En attente");
+        $bet_simple = Bet_simple::select(\DB::raw('event,sport,type,result,date_event,stake,cost,prognosis'))
+            ->where('result', '<>', "En attente")
+            ->unionAll($bet_combi)
+            ->get();
+        return $bet_simple;}
 
-    }
+
     // Récupere les paris en cours"
     public static function getBetsIsOpen()
     {
@@ -96,7 +104,7 @@ class Bet_simple extends Model
     }
 
     // Retourne l'icone du sport
-    public function getIconSport()
+    public  function getIconSport()
     {
         $icon = '';
         switch ($this->sport) {

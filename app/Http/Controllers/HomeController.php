@@ -17,6 +17,7 @@ class HomeController extends Controller
         $nbAllBets = Bet_simple::countAllBets();
 
         return view('pages/home', [
+           
             'nbAllBets' => $nbAllBets,
             'nbBets' => $nbBets,
             'bets' => $bets,
