@@ -85,7 +85,8 @@ class Bet_simple extends Model
             ->where('result', '<>', "En attente")
             ->unionAll($bet_combi)
             ->get();
-        return $bet_simple;}
+        return $bet_simple;
+    }
 
 
     // Récupere les paris en cours"
