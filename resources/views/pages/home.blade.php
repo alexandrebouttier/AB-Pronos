@@ -46,7 +46,7 @@
                         <th scope="col">Pronostic</th>
                         <th scope="col">Côte</th>
                         <th scope="col">Mise</th>
-                        <th scope="col">Gains</th>
+                        <th scope="col">Profit</th>
                         <th scope="col">Résultat</th>
                     </tr>
 

@@ -140,7 +140,6 @@ class Bet_simple extends Model
         }
         return $icon;
     }
-    
     // Retourne les gains
     public function getGains()
     {
@@ -149,7 +148,7 @@ class Bet_simple extends Model
         $cost = $this->cost;
 
         if ($result == "Gagné") {
-            $gains = $stake * $cost;
+            $gains = $stake * $cost - $stake;
         } elseif ($result == "Perdu") {
             $gains = -$stake;
         } else {
