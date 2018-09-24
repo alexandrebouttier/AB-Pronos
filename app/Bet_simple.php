@@ -81,9 +81,11 @@ class Bet_simple extends Model
         $bet_combi = DB::table('bet_combi')
             ->select(\DB::raw('event,sport,type,result,date_event,stake,cost,null AS prognosis '))
             ->where('result', '<>', "En attente");
+
         $bet_simple = Bet_simple::select(\DB::raw('event,sport,type,result,date_event,stake,cost,prognosis'))
             ->where('result', '<>', "En attente")
             ->unionAll($bet_combi)
+            ->orderBy('date_event', 'DESC')
             ->get();
         return $bet_simple;
     }
