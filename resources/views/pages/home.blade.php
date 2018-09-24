@@ -264,7 +264,7 @@
             name: 'Taux',
             colorByPoint: true,
             data: [
-                { 
+                {
                     color: '#2c3e50',
                     name: 'Combiné',
                     y:  {{$bet->countBetsForType("Combiné")}}

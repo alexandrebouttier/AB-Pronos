@@ -50,12 +50,12 @@ class CreateTableBetCombi extends Migration
             $table->time('hour_event_4');
             $table->string('cost_4');
             $table->string('prognosis_4');
-            
-          
+
+
             $table->string('type');
             $table->string('stake');
             $table->string('cost');
-            $table->string('result');
+            $table->string('result')->default("En attente");
             $table->timestamps();
         });
     }

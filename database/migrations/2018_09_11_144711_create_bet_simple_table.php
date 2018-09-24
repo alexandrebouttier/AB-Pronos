@@ -24,7 +24,7 @@ class CreateBetSimpleTable extends Migration
             $table->string('stake');
             $table->string('cost');
             $table->string('prognosis');
-            $table->string('result');
+            $table->string('result')->default("En attente");
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ class CreateBetSimpleTable extends Migration
     public function down()
     {
         Schema::drop('bet_simple');
-       
+
     }
 }
