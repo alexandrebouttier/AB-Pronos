@@ -23,10 +23,11 @@ class BetsController extends Controller
      */
     public function index()
     {
-     
+
         $bets = Bet_simple::getBetsIsOpen();
+        $nbBets =Bet_simple::countBetsForResult("En attente");
         return view('pages/bets', [
-         
+            'nbBets'=> $nbBets,
             'bets' => $bets,
 
         ]);

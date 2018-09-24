@@ -39,7 +39,7 @@ class Bet_simple extends Model
         return $nb;
     }
     // Retourne le nombres de paris selon le résultat "Gagné" , "Perdu" ,"Rembourser" "En attente"
-    public function countBetsForResult($result)
+    public static function countBetsForResult($result)
     {
         $bet_combi = DB::table('bet_combi')
             ->where('result', '=', "$result")
