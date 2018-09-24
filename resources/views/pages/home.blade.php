@@ -60,11 +60,11 @@
                         <td>
                             @if($bet-> type == "Combiné")
                                  @if($bet-> event && $bet-> event_2 )
-                                {{str_limit($bet-> event." + ".$bet-> event_2 ,45,' [...]')}}
+                                {{str_limit($bet-> event." + ".$bet-> event_2 ,45,' ...')}}
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3)
-                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' [...]')}}
+                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' ...')}}
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3 && $bet-> event_4)
-                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' [...]')}}
+                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' ...')}}
                             @endif
                         @else
                             {{str_limit($bet -> event, 45, ' [...]')}}
@@ -74,14 +74,14 @@
                         <td>
                                 @if($bet-> type == "Combiné")
                                 @if($bet-> event && $bet-> event_2 )
-                               {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ,45,' [...]')}}
+                               {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ,45,'...')}}
                            @elseif($bet-> event && $bet-> event_2  && $bet-> event_3)
-                           {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ."+". $bet-> prognosis_3 ,45,' [...]')}}
+                           {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ."+". $bet-> prognosis_3 ,45,' ...')}}
                            @elseif($bet-> event && $bet-> event_2  && $bet-> event_3 && $bet-> event_4)
-                           {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ."+". $bet-> prognosis_3."+". $bet-> prognosis_4  ,45,' [...]')}}
+                           {{str_limit($bet-> prognosis_1." + ".$bet-> prognosis_2 ."+". $bet-> prognosis_3."+". $bet-> prognosis_4  ,45,' ...')}}
                            @endif
                        @else
-                           {{str_limit($bet -> prognosis, 45, ' [...]')}}
+                           {{str_limit($bet -> prognosis, 45, '...')}}
                        @endif
                            </td>
                         <td>{{ $bet -> cost}}</td>
