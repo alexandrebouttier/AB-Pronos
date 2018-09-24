@@ -38,7 +38,7 @@ class CreateTableBetCombi extends Migration
             $table->string('event_3');
             $table->string('sport_3');
             $table->string('competition_3');
-            $table->date('date_event_3');
+            $table->date('date_event_3')->nullable();
             $table->time('hour_event_3');
             $table->string('cost_3');
             $table->string('prognosis_3');
@@ -46,7 +46,7 @@ class CreateTableBetCombi extends Migration
             $table->string('event_4');
             $table->string('sport_4');
             $table->string('competition_4');
-            $table->date('date_event_4');
+            $table->date('date_event_4')->nullable();
             $table->time('hour_event_4');
             $table->string('cost_4');
             $table->string('prognosis_4');
