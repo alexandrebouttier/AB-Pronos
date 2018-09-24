@@ -16,11 +16,11 @@ class CreateBetSimpleTable extends Migration
         Schema::create('bet_simple', function (Blueprint $table) {
             $table->increments('id');
             $table->string('event');
-            $table->string('sport');
+            $table->string('sport')->default("Football");
             $table->string('competition');
             $table->date('date_event');
             $table->time('hour_event');
-            $table->string('type');
+            $table->string('type')->default("Simple");
             $table->string('stake');
             $table->string('cost');
             $table->string('prognosis');

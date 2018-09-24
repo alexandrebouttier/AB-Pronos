@@ -20,7 +20,7 @@ class CreateTableBetCombi extends Migration
             $table->integer('user_id')->unsigned();
             $table->increments('id');
             $table->string('event');
-            $table->string('sport');
+            $table->string('sport')->default("Football");
             $table->string('competition');
             $table->date('date_event');
             $table->time('hour_event');
@@ -28,7 +28,7 @@ class CreateTableBetCombi extends Migration
             $table->string('prognosis_1');
 
             $table->string('event_2');
-            $table->string('sport_2');
+            $table->string('sport_2')->default("Football");
             $table->string('competition_2');
             $table->date('date_event_2');
             $table->time('hour_event_2');
@@ -36,7 +36,7 @@ class CreateTableBetCombi extends Migration
             $table->string('prognosis_2');
 
             $table->string('event_3');
-            $table->string('sport_3');
+            $table->string('sport_3')->default("Football");
             $table->string('competition_3');
             $table->date('date_event_3')->nullable();
             $table->time('hour_event_3');
@@ -44,7 +44,7 @@ class CreateTableBetCombi extends Migration
             $table->string('prognosis_3');
 
             $table->string('event_4');
-            $table->string('sport_4');
+            $table->string('sport_4')->default("Football");
             $table->string('competition_4');
             $table->date('date_event_4')->nullable();
             $table->time('hour_event_4');
@@ -52,7 +52,7 @@ class CreateTableBetCombi extends Migration
             $table->string('prognosis_4');
 
 
-            $table->string('type');
+            $table->string('type')->default("Combiné");
             $table->string('stake');
             $table->string('cost');
             $table->string('result')->default("En attente");
