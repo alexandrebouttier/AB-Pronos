@@ -71,7 +71,16 @@ class Bet_simple extends Model
     // Retourne le nombre de paris cloturer
     public static function countBetsIsClosed()
     {
-        return Bet_simple::where('result', '<>', "En attente")->count();
+        $bet_combi = DB::table('bet_combi')
+            ->where('result', '<>', "En attente")
+            ->count();
+
+        $bet_simple = DB::table('bet_simple')
+            ->where('result', '<>', "En attente")
+            ->count();
+        $nbBets = $bet_combi + $bet_simple;
+        return $nbBets;
+
     }
 
     // Récupere les paris cloturer "10 derniers"
