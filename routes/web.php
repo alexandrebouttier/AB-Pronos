@@ -20,3 +20,8 @@ Route::get('/pronostics', 'BetsController@index')->name('bets');
 Route::get('/contact', function () {
     return view('pages/contact');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

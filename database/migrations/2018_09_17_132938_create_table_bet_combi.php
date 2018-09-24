@@ -14,10 +14,7 @@ class CreateTableBetCombi extends Migration
     public function up()
     {
         Schema::create('bet_combi', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
-            $table->integer('user_id')->unsigned();
+       
             $table->increments('id');
             $table->string('event');
             $table->string('sport')->default("Football");
