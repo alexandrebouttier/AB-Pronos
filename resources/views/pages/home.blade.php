@@ -102,8 +102,11 @@
             </table>
         </div>
         <!-- // table-responsive -->
-
-        <div style="margin-top:3em; margin-bottom:3em;" class="text-center">
+        <div style="margin-top:3em; margin-bottom:1em;" class="text-center">
+            <a href="{{ url ('/historique') }}" class="btn btn-info my-2 my-sm-0 text-uppercase">Accéder à l'historique complet</a>
+        </div>
+        <p class="text-center text-bold">OU</p>
+        <div style="margin-top:1em; margin-bottom:3em;" class="text-center">
             <a href="{{ url ('/pronostics') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">Voir les pronostics
                 en
                 cours</a>
