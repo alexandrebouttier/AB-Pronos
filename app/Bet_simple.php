@@ -170,4 +170,50 @@ class Bet_simple extends Model
 
         return $gains;
     }
+
+    // Retourne le total des mises
+    public function getStakeSum()
+    {
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('stake'))
+            ->where('result', '<>', "En attente");
+
+        $bet_simple = Bet_simple::select(\DB::raw('stake'))
+            ->where('result', '<>', "En attente")
+            ->unionAll($bet_combi)
+            ->sum('stake');
+        return $bet_simple;
+    }
+
+    // Retourne le montant des paris perdant
+    public function getLoseBetSum()
+    {
+
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('stake'))
+            ->where('result', '=', "Perdu");
+
+        $bet_simple = Bet_simple::select(\DB::raw('stake'))
+            ->where('result', '=', "Perdu")
+            ->unionAll($bet_combi)
+            ->sum('stake');
+        return $bet_simple;
+    }
+// Retourne le montant des gains net
+
+    public function getGainsSum()
+    {
+
+
+    }
+    public function getRoi()
+    {
+        $sumStake = $this->getStakeSum();
+        $sumLose = $this->getLoseBetSum();
+        $sumGain =$this-> getGainsSum();
+
+      
+
+    }
+
 }

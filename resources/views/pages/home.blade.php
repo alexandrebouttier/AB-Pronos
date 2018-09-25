@@ -120,6 +120,7 @@
 <section id="stats">
     <div class="container">
         <h2 class="text-center">Statistiques</h2>
+        <p>{{ $bet->getRoi()}}</p>
         <h5 class="text-center">Mes stats de mes pronostics</h5>
         <div class="row">
             <div class="col-md-4">
