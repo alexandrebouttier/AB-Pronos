@@ -22,6 +22,6 @@ Route::get('/contact', function () {
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'abpronosWPS'], function () {
     Voyager::routes();
 });
