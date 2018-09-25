@@ -95,10 +95,26 @@ class Bet_simple extends Model
             ->where('result', '<>', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
+            ->take(10)
             ->get();
+
         return $bet_simple;
     }
+    public static function getAllBetsIsClosed()
+    {
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('event,event_2,event_3,event_4,sport,type,result,date_event,stake,cost,null AS prognosis,prognosis_1,prognosis_2,prognosis_3,prognosis_4 '))
+            ->where('result', '<>', "En attente");
 
+        $bet_simple = Bet_simple::select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,sport,type,result,date_event,stake,cost,prognosis,null AS prognosis_1,null AS prognosis_2,null AS prognosis_3,null AS prognosis_4'))
+            ->where('result', '<>', "En attente")
+            ->unionAll($bet_combi)
+            ->orderBy('date_event', 'DESC')
+            ->simplePaginate(20);
+
+
+        return $bet_simple;
+    }
     // Récupere les paris en cours"
     public static function getBetsIsOpen()
     {
@@ -212,8 +228,11 @@ class Bet_simple extends Model
         $sumLose = $this->getLoseBetSum();
         $sumGain =$this-> getGainsSum();
 
-      
+
 
     }
 
 }
+
+
+

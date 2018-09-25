@@ -13,12 +13,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/') }}">Accueil</a>
                 </li>
-              
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/pronostics') }}">Pronostics</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/#stats') }}">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url ('/historique') }}">Historique</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact">Contact</a>
@@ -35,12 +38,12 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="{{ route('logout') }}">Déconnexion</a>
                 </div>
-            
+
               </div>
-            
+
         @endguest
-      
-           
+
+
         </div>
     </div>
     <!-- // Container -->
