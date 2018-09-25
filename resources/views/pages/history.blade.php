@@ -66,7 +66,7 @@
 
                     @else
                     <div class="center alert alert-primary" role="alert">
-                        Oops , Il y a aucun pronostics !
+                        Oops , Il y a aucun historique !
                     </div>
                     @endif
 
