@@ -8,6 +8,8 @@ class BetController extends Controller
 {
     public function index()
     {
-        return view('pages/bet');
+        return view('pages/bet',[
+            'id' => request('id'),
+        ]);
     }
 }
