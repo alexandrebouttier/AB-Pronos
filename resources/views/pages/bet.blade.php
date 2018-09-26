@@ -17,10 +17,7 @@
                     <a href="/pronostics" class="btn btn-info">RETOUR</a>
                     <br>
                     <span class="posted-on">Publié
-                        le <a href="https://www.teambet.fr/combine-de-2-matchs/" rel="bookmark">
-                            <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("m/d/Y à H:i", strtotime($bet->created_at))}}</time>
-
-                        </a>
+                        le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("m/d/Y à H:i", strtotime($bet->created_at))}}</time>
                     </span>
 
                     <div class="table-responsive-md"> Pari {{ $bet->type}} <table class="table table-striped">
@@ -28,14 +25,14 @@
                                 <tr>
                                     <th scope="col">Match</th>
                                     <th scope="col">Sélection</th>
-                                    <th scope="col">Côte</th>
+                                    <th scope="col">Cote</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
                                     <td> <b> Paris SG - Reims</b> <br> 26/09/2018 à 21H00 <br> <img class="sport_logo"
-                                            src="https://www.teambet.fr/wp-content/themes/teambet/img/football.png">
+                                            src="/img/.png">
                                         France, Ligue 1 Conforama</td>
                                     <td> <b>Paris SG gagne de 2 ou +</b></td>
                                     <td> <b>1.32</b></td>

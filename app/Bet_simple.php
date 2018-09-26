@@ -88,10 +88,10 @@ class Bet_simple extends Model
     public static function getBetsIsClosed()
     {
         $bet_combi = DB::table('bet_combi')
-            ->select(\DB::raw('event,event_2,event_3,event_4,sport,type,result,date_event,stake,cost,null AS prognosis,prognosis_1,prognosis_2,prognosis_3,prognosis_4 '))
+            ->select(\DB::raw('id,event,event_2,event_3,event_4,sport,type,result,date_event,stake,cost,null AS prognosis,prognosis_1,prognosis_2,prognosis_3,prognosis_4 '))
             ->where('result', '<>', "En attente");
 
-        $bet_simple = Bet_simple::select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,sport,type,result,date_event,stake,cost,prognosis,null AS prognosis_1,null AS prognosis_2,null AS prognosis_3,null AS prognosis_4'))
+        $bet_simple = Bet_simple::select(\DB::raw('id,event,null AS event_2,null AS event_3,null AS event_4,sport,type,result,date_event,stake,cost,prognosis,null AS prognosis_1,null AS prognosis_2,null AS prognosis_3,null AS prognosis_4'))
             ->where('result', '<>', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
@@ -133,18 +133,18 @@ class Bet_simple extends Model
     {
         $id =request('id');
         $bet_combi = DB::table('bet_combi')
-            ->select(\DB::raw('event,event_2,event_3,event_4,id,created_at,type,stake,cost,date_event'))
+            ->select(\DB::raw('event,event_2,event_3,event_4,id,created_at,type,stake,cost,sport,sport_2,sport_3,sport_4,date_event'))
             ->where('id', '=', $id);
 
         $bet_simple = DB::table('bet_simple')
-            ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,created_at,type,stake,cost,date_event'))
+            ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,created_at,type,stake,sport,null AS sport_2,null AS sport_3,null AS sport_4,cost,date_event'))
             ->where('id', '=', $id)
             ->unionAll($bet_combi)
             ->get();
         return $bet_simple;
     }
     // Retourne l'icone du sport
-    public function getIconSport()
+    public  function getIconSport()
     {
         $icon = '';
         switch ($this->sport) {
