@@ -17,7 +17,7 @@
                     <a href="/pronostics" class="btn btn-info">RETOUR</a>
                     <br>
                     <span class="posted-on">Publié
-                        le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("m/d/Y à H:i", strtotime($bet->created_at))}}</time>
+                        le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("d/m/Y à H:i", strtotime($bet->created_at))}}</time>
                     </span>
 
                     <div class="table-responsive-md"> Pari {{ $bet->type}} <table class="table table-striped">
