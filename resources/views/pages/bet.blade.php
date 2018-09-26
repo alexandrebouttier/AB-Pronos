@@ -30,20 +30,16 @@
                             </thead>
 
                             <tbody>
+                                @if ($bet->event)
                                 <tr>
-                                    <td> <b> Paris SG - Reims</b> <br> 26/09/2018 à 21H00 <br> <img class="sport_logo"
+                                    <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br> <img class="sport_logo"
                                             src="/img/.png">
-                                        France, Ligue 1 Conforama</td>
-                                    <td> <b>Paris SG gagne de 2 ou +</b></td>
-                                    <td> <b>1.32</b></td>
+                                            {{$bet->competition}}</td>
+                                    <td> <b>{{$bet->prognosis}}</b></td>
+                                    <td> <b>{{$bet->cost}}</b></td>
                                 </tr>
-                                <tr>
-                                    <td> <b> Leganes - FC Barcelone</b> <br> 26/09/2018 à 21H00 <br> <img class="sport_logo"
-                                            src="https://www.teambet.fr/wp-content/themes/teambet/img/football.png">
-                                        Espagne, Liga</td>
-                                    <td> <b>Résultat du match FC Barcelone</b></td>
-                                    <td> <b>1.20</b></td>
-                                </tr>
+                                @endif
+
                             </tbody>
                         </table>
 
