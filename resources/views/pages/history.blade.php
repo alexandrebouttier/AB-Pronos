@@ -32,14 +32,14 @@
                         <td>
                             @if($bet-> type == "Combiné")
                                  @if($bet-> event && $bet-> event_2 )
-                                {{str_limit($bet-> event." + ".$bet-> event_2 ,45,' ...')}}
+                              <a href="pronostic/{{ $bet -> id}}"> {{str_limit($bet-> event." + ".$bet-> event_2 ,45,' ...')}}</a>
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3)
-                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' ...')}}
+                            <a href="pronostic/{{ $bet -> id}}"> {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' ...')}}</a>
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3 && $bet-> event_4)
-                            {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' ...')}}
+                            <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' ...')}}</a>
                             @endif
                         @else
-                            {{str_limit($bet -> event, 45, ' [...]')}}
+                        <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet -> event, 45, ' [...]')}}</a>
                         @endif
                     </td>
                         <td>{{ $bet -> date_event}}</td>
