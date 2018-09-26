@@ -31,7 +31,7 @@
                         {{  date("d/m/Y à H:i", strtotime($bet->created_at))}}</li>
                         <li class="list-group-item">Type de pari : {{$bet-> type}}</li>
                         <li class="list-group-item">Cote du pari : {{$bet-> cost}}</li>
-                        <li class="list-group-item">Date du match : {{$bet-> date_event}}</li>
+                        <li class="list-group-item">Date du match : {{ date("d/m/Y", strtotime($bet->date_event))}}</li>
                     </ul>
 
                     <div class="card-body text-center bg-white">
