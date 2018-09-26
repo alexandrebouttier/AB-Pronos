@@ -22,7 +22,7 @@
                     </span>
 
                     <div class="table-responsive-md"> Pari {{ $bet->type}} <br>
-                        Résultat:{{ $bet->result}}
+                        Résultat:
                          <table class="table table-striped">
                             <thead>
                                 <tr>

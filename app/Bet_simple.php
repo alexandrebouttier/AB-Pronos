@@ -182,6 +182,9 @@ class Bet_simple extends Model
             case 'Rembourser':
                 $icon = 'cancel';
                 break;
+            case 'En attente':
+                $icon = 'cancel';
+                break;
         }
         return $icon;
     }
