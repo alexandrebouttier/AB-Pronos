@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="bet">
 
-                    <a href="pronostics" class="btn btn-info">RETOUR</a>
+                    <a href="/pronostics" class="btn btn-info">RETOUR</a>
                     <br>
                     <span class="posted-on">Publié
                         le <a href="https://www.teambet.fr/combine-de-2-matchs/" rel="bookmark">
