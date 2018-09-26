@@ -11,19 +11,19 @@
 
         <div class="row">
             <div class="col-md-12">
+                    @foreach ($bets as $bet)
                 <div class="bet">
 
                     <a href="/pronostics" class="btn btn-info">RETOUR</a>
                     <br>
                     <span class="posted-on">Publié
                         le <a href="https://www.teambet.fr/combine-de-2-matchs/" rel="bookmark">
-                            <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">26
-                                septembre 2018
-                            </time>
+                            <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("m/d/Y à H:i", strtotime($bet->created_at))}}</time>
+
                         </a>
                     </span>
 
-                    <div class="table-responsive-md"> Pari Combiné<table class="table table-striped">
+                    <div class="table-responsive-md"> Pari {{ $bet->type}} <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Match</th>
@@ -49,9 +49,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <span> Cote totale : 1.58</span>
+
+                        <span> Cote totale : {{ $bet->cost}}</span>
                         <br>
-                        <span>Mise totale : 10€ </span>
+                        <span>Mise totale : {{ $bet->stake }}€ </span>
                         <br>
                         <span> Gains potentiels : 5.80 €</span>
 
@@ -59,6 +60,7 @@
 
 
                 </div>
+                @endforeach
 
             </div>
         </div>

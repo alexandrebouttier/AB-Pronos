@@ -112,7 +112,6 @@ class Bet_simple extends Model
             ->orderBy('date_event', 'DESC')
             ->simplePaginate(20);
 
-
         return $bet_simple;
     }
     // Récupere les paris en cours"
@@ -130,7 +129,20 @@ class Bet_simple extends Model
             ->simplePaginate(6);
         return $bet_simple;
     }
+    public static function getBet()
+    {
+        $id =request('id');
+        $bet_combi = DB::table('bet_combi')
+            ->select(\DB::raw('event,event_2,event_3,event_4,id,created_at,type,stake,cost,date_event'))
+            ->where('id', '=', $id);
 
+        $bet_simple = DB::table('bet_simple')
+            ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,created_at,type,stake,cost,date_event'))
+            ->where('id', '=', $id)
+            ->unionAll($bet_combi)
+            ->get();
+        return $bet_simple;
+    }
     // Retourne l'icone du sport
     public function getIconSport()
     {
@@ -220,19 +232,13 @@ class Bet_simple extends Model
     public function getGainsSum()
     {
 
-
     }
     public function getRoi()
     {
         $sumStake = $this->getStakeSum();
         $sumLose = $this->getLoseBetSum();
-        $sumGain =$this-> getGainsSum();
-
-
+        $sumGain = $this->getGainsSum();
 
     }
 
 }
-
-
-
