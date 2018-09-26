@@ -11,13 +11,13 @@
     <title>ABPronos - Pronostiqueur en paris sportifS</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+  
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="{{ URL::asset('img/favicon.png') }}"/>
-  
+
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,5 +30,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ URL::asset('js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

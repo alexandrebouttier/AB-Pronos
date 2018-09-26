@@ -23,9 +23,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url ('/historique') }}">Historique</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact">Contact</a>
-                </li>
+              
             </ul>
             @guest
                     <a class="btn btn-outline-success my-2 my-sm-0" href="{{ route('login') }}" role="button">Connexion</a>
