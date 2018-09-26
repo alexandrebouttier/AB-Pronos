@@ -11,6 +11,7 @@
 
         <div class="row">
             <div class="col-md-12">
+
                     @foreach ($bets as $bet)
                 <div class="bet">
 
@@ -20,7 +21,9 @@
                         le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("d/m/Y à H:i", strtotime($bet->created_at))}}</time>
                     </span>
 
-                    <div class="table-responsive-md"> Pari {{ $bet->type}} <table class="table table-striped">
+                    <div class="table-responsive-md"> Pari {{ $bet->type}} <br>
+                        Résultat:{{ $bet->result}}
+                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Match</th>
@@ -54,6 +57,7 @@
 
                 </div>
                 @endforeach
+
 
             </div>
         </div>

@@ -25,6 +25,7 @@ class BetController extends Controller
     {
         $bets = Bet_simple::getBet();
         return view('pages/bet',[
+       
             'id' => request('id'),
             'bets' => $bets,
         ]);
