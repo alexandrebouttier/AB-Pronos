@@ -35,7 +35,7 @@
                     </ul>
 
                     <div class="card-body text-center bg-white">
-                        <a href="pronostic/{{ $bet -> id}}" class="btn btn-info my-2 my-sm-0">Voir le pronostic</a>
+                        <a href="pronostic/{{ $bet -> type}}/{{ $bet -> id}}" class="btn btn-info my-2 my-sm-0">Voir le pronostic</a>
                     </div>
                 </div>
                 @endforeach

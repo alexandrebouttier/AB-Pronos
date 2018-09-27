@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@home');
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/pronostics', 'BetsController@index')->name('bets');
-Route::get('/pronostic/{id}', 'BetController@index')->name('bet');
+Route::get('/pronostic/{type}/{id}', 'BetController@index')->name('bet');
 Route::get('/historique', 'HistoryController@history')->name('history');
 
 Route::get('/contact', function () {

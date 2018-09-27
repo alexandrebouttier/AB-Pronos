@@ -60,14 +60,14 @@
                         <td>
                             @if($bet-> type == "Combiné")
                                  @if($bet-> event && $bet-> event_2 )
-                                 <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet-> event." + ".$bet-> event_2 ,45,' ...')}}</a>
+                                 <a href="pronostic/{{ $bet -> type}}/{{ $bet -> id}}">{{str_limit($bet-> event." + ".$bet-> event_2 ,45,' ...')}}</a>
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3)
-                            <a href="pronostic/{{ $bet -> id}}"> {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' ...')}}</a>
+                            <a href="pronostic/{{ $bet -> type}}/{{ $bet -> id}}"> {{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3 ,45,' ...')}}</a>
                             @elseif($bet-> event && $bet-> event_2  && $bet-> event_3 && $bet-> event_4)
-                            <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' ...')}}</a>
+                            <a href="pronostic/{{ $bet -> type}}/{{ $bet -> id}}">{{str_limit($bet-> event." + ".$bet-> event_2 ."+". $bet-> event_3."+". $bet-> event_4  ,45,' ...')}}</a>
                             @endif
                         @else
-                            <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet -> event, 45, ' [...]')}}</a>
+                            <a href="pronostic/{{ $bet -> type}}/{{ $bet -> id}}">{{str_limit($bet -> event, 45, ' [...]')}}</a>
                         @endif
                     </td>
 
