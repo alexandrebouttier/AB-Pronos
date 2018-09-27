@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Bet_simple;
 class BetController extends Controller
 {
@@ -25,7 +26,7 @@ class BetController extends Controller
     {
         $bets = Bet_simple::getBet();
         return view('pages/bet',[
-       
+
             'id' => request('id'),
             'bets' => $bets,
         ]);

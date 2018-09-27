@@ -36,7 +36,13 @@
                                 @if ($bet->event)
                                 <tr>
                                     <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br>
-                                         <img class="sport_logo" src="/img/{{ $bet->getIconSport()}}.png" alt="">
+                                        {{$bet->sport}}
+                                         @if($bet->sport == "Football")
+                                             <img class="sport_logo" src="/img/football.png" alt="">
+                                         @elseif($bet->sport == "Tennis")
+                                            <img class="sport_logo" src="/img/tennis.png" alt="">
+                                         @endif
+
                                             {{$bet->competition}}</td>
                                     <td>
                                         <b>
