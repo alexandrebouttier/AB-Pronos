@@ -103,7 +103,15 @@
                         <br>
                         <span>Mise totale : {{ $bet->stake }}€ </span>
                         <br>
-                        <span>Bénéfice: {{ $bet->getGains()}}€</span>
+                            @if($bet->result == "Gagné")
+                                <span class="green text-bold">Bénéfice: +{{ $bet->getGains()}}€</span>
+                                @elseif($bet->result == "Perdu")
+                                <span class="red text-bold">Perte: {{ $bet->getGains()}}€</span>
+                            @elseif($bet->result == "Rembourser")
+                                <span class=" text-bold">Bénéfice: {{ $bet->getGains()}}€</span>
+                            @elseif($bet->result == "En attente")
+                                <span class="text-bold">Bénéfice potentiel: +{{ $bet->getGains()}}€</span>
+                        @endif
 
                     </div>
 

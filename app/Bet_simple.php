@@ -204,14 +204,27 @@ class Bet_simple extends Model
 
         if ($result == "Gagné") {
             $gains = $stake * $cost - $stake;
-        } elseif ($result == "Perdu") {
-            $gains = -$stake;
-        } else {
-            $gains = $stake;
-        }
-        $gains = number_format($gains, 2);
+            $gains = number_format($gains, 2);
+            return $gains;
 
-        return $gains;
+        }
+        elseif ($result == "Perdu") {
+            $gains = -$stake;
+            $gains = number_format($gains, 2);
+            return $gains;
+        }
+        elseif ($result == "Rembourser") {
+            $gains = 0;
+            return $gains;
+        }
+        elseif ($result == "En attente") {
+            $gains = $stake * $cost - $stake;
+            $gains = number_format($gains, 2);
+            return $gains;
+        }
+
+
+
     }
 
     // Retourne le total des mises
