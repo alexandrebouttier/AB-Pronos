@@ -115,7 +115,7 @@ class Bet_simple extends Model
             ->where('result', '<>', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
-            ->simplePaginate(20);
+            ->simplePaginate(10);
 
         return $bet_simple;
     }
@@ -131,7 +131,7 @@ class Bet_simple extends Model
             ->where('result', '=', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
-            ->simplePaginate(6);
+            ->simplePaginate(2);
         return $bet_simple;
     }
 

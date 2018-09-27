@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Bet_simple;
 
-//use App\Http\Controllers\BetsController;
 
 class HomeController extends Controller
 {
@@ -17,7 +16,7 @@ class HomeController extends Controller
         $nbAllBets = Bet_simple::countAllBets();
 
         return view('pages/home', [
-           
+
             'nbAllBets' => $nbAllBets,
             'nbBets' => $nbBets,
             'bets' => $bets,
