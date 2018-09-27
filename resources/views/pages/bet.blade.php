@@ -38,8 +38,25 @@
                                     <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br> <img class="sport_logo"
                                             src="/img/.png">
                                             {{$bet->competition}}</td>
-                                    <td> <b>{{$bet->prognosis}}</b></td>
+                                    <td>
+                                        <b>
+                                            @if($bet->type == "Simple")
+                                                {{$bet->prognosis}}
+                                            @elseif($bet->type == "Combiné")
+                                                {{$bet->prognosis_1}}
+                                            @endif
+                                       </b></td>
                                     <td> <b>{{$bet->cost}}</b></td>
+                                </tr>
+                                @endif
+
+                                @if ($bet->event_2)
+                                <tr>
+                                    <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br> <img class="sport_logo"
+                                            src="/img/.png">
+                                            {{$bet->competition_2}}</td>
+                                    <td> <b>{{$bet->prognosis_2}}</b></td>
+                                    <td> <b>{{$bet->cost_2}}</b></td>
                                 </tr>
                                 @endif
 
