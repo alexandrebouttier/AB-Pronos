@@ -37,7 +37,7 @@
     <meta property="og:image:alt" content="Logo du site web AB-Pronostics" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="315" />
-    <meta property="og:description" content="ABPronos est une plateforme de pronostics pour les paris sportifs , je vous partage mes meilleurs pronostics , pour différent sport comme le football , le tennis" />
+    <meta property="og:description" content="ABPronos est une plateforme de pronostics pour les paris sportifs , je vous partage mes meilleurs pronostics  pour différent sport comme le football , le tennis" />
     <meta property="fb:app_id" content="467151287075682" />
     <link rel="icon" type="image/png" href="{{ URL::asset('img/favicon.png') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
