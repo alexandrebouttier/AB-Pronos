@@ -167,8 +167,6 @@ class Bet_simple extends Model
                 $icon = 'tennis';
                 break;
         }
-
-
         switch ($this->type) {
             case 'Combiné':
                 $icon = 'combi';

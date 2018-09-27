@@ -36,13 +36,11 @@
                                 @if ($bet->event)
                                 <tr>
                                     <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br>
-                                        {{$bet->sport}}
-                                         @if($bet->sport == "Football")
-                                             <img class="sport_logo" src="/img/football.png" alt="">
-                                         @elseif($bet->sport == "Tennis")
-                                            <img class="sport_logo" src="/img/tennis.png" alt="">
-                                         @endif
-
+                                        @if($bet->sport == "Football")
+                                        <img class="sport_logo" src="/img/football.png" alt="">
+                                        @elseif($bet->sport == "Tennis")
+                                        <img class="sport_logo" src="/img/tennis.png" alt="">
+                                        @endif
                                             {{$bet->competition}}</td>
                                     <td>
                                         <b>
@@ -59,7 +57,39 @@
                                 @if ($bet->event_2)
                                 <tr>
                                     <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br>
-                                        <img class="sport_logo" src="/img/{{ $bet->getIconSport()}}.png" alt="">
+                                        @if($bet->sport == "Football")
+                                        <img class="sport_logo" src="/img/football.png" alt="">
+                                        @elseif($bet->sport == "Tennis")
+                                        <img class="sport_logo" src="/img/tennis.png" alt="">
+                                        @endif
+                                            {{$bet->competition_2}}</td>
+                                    <td> <b>{{$bet->prognosis_2}}</b></td>
+                                    <td> <b>{{$bet->cost_2}}</b></td>
+                                </tr>
+                                @endif
+
+                                @if ($bet->event_3)
+                                <tr>
+                                    <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br>
+                                        @if($bet->sport_2 == "Football")
+                                        <img class="sport_logo" src="/img/football.png" alt="">
+                                        @elseif($bet->sport_3 == "Tennis")
+                                        <img class="sport_logo" src="/img/tennis.png" alt="">
+                                        @endif
+                                            {{$bet->competition_2}}</td>
+                                    <td> <b>{{$bet->prognosis_2}}</b></td>
+                                    <td> <b>{{$bet->cost_2}}</b></td>
+                                </tr>
+                                @endif
+
+                                @if ($bet->event_4)
+                                <tr>
+                                    <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br>
+                                        @if($bet->sport_4 == "Football")
+                                        <img class="sport_logo" src="/img/football.png" alt="">
+                                        @elseif($bet->sport_4 == "Tennis")
+                                        <img class="sport_logo" src="/img/tennis.png" alt="">
+                                        @endif
                                             {{$bet->competition_2}}</td>
                                     <td> <b>{{$bet->prognosis_2}}</b></td>
                                     <td> <b>{{$bet->cost_2}}</b></td>
