@@ -42,7 +42,7 @@
                         <a href="pronostic/{{ $bet -> id}}">{{str_limit($bet -> event, 45, ' [...]')}}</a>
                         @endif
                     </td>
-                        <td>{{ $bet -> date_event}}</td>
+                        <td>{{ date("d/m/Y", strtotime($bet->date_event))}}</td>
                         <td>
                                 @if($bet-> type == "Combiné")
                                 @if($bet-> event && $bet-> event_2 )
