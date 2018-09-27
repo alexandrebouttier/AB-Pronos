@@ -73,7 +73,7 @@
                 </tbody>
             </table>
             <div style="margin-left:3em;">
-                {{ $bets->links() }}
+               {{ $bets->links() }}
             </div>
 
         </div>
