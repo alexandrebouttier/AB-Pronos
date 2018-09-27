@@ -163,7 +163,9 @@ a{
 .sport_logo {
     height: 20px;
 }
-
+.posted-on{
+    font-size:0.9em;
+}
 /*========================== 08. LOGIN/REGISTER ========================== */
 .form-signin {
     width: 100%;
