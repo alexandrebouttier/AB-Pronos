@@ -67,7 +67,7 @@
                         <br>
                         <span>Mise totale : {{ $bet->stake }}€ </span>
                         <br>
-                        <span> Gains potentiels : 5.80 €</span>
+                        <span>Bénéfice: {{ $bet->getGains()}}€</span>
 
                     </div>
 

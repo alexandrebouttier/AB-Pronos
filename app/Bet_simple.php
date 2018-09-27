@@ -18,9 +18,11 @@ class Bet_simple extends Model
     public static function countAllBets()
     {
         $bet_combi = DB::table('bet_combi')
+            ->where('result', '<>', "En attente")
             ->count();
 
         $bet_simple = DB::table('bet_simple')
+            ->where('result', '<>', "En attente")
             ->count();
 
         $nbBets = $bet_combi + $bet_simple;
@@ -35,6 +37,7 @@ class Bet_simple extends Model
             $table = "bet_combi";
         }
         $nb = DB::table($table)
+            ->where('result', '<>', "En attente")
             ->count();
         return $nb;
     }
@@ -60,9 +63,11 @@ class Bet_simple extends Model
             ->where('sport_2', '=', "$sport")
             ->where('sport_3', '=', "$sport")
             ->where('sport_4', '=', "$sport")
+            ->where('result', '<>', "En attente")
             ->count();
         $bet_simple = DB::table('bet_simple')
             ->where('sport', '=', "$sport")
+            ->where('result', '<>', "En attente")
             ->count();
         $nbBets = $bet_combi + $bet_simple;
         return $nbBets;
