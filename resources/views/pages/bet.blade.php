@@ -108,7 +108,7 @@
                                 @elseif($bet->result == "Perdu")
                                 <span class="red text-bold">Perte: {{ $bet->getGains()}}€</span>
                             @elseif($bet->result == "Rembourser")
-                                <span class=" text-bold">Bénéfice: {{ $bet->getGains()}}€</span>
+                                <span class="text-bold">Bénéfice: {{ $bet->getGains()}}€</span>
                             @elseif($bet->result == "En attente")
                                 <span class="text-bold">Bénéfice potentiel: +{{ $bet->getGains()}}€</span>
                         @endif
