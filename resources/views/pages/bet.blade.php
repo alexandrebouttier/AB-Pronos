@@ -22,7 +22,7 @@
                     </span>
 
                     <div class="table-responsive-md"> Pari {{ $bet->type}} <br>
-                        Résultat:
+                        Résultat:<img class="img-result" src="/img/{{ $bet->getIconResult()}}.png" alt="">
                          <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -35,8 +35,8 @@
                             <tbody>
                                 @if ($bet->event)
                                 <tr>
-                                    <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br> <img class="sport_logo"
-                                            src="/img/.png">
+                                    <td> <b>{{$bet->event}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event))}} à {{ date("H:i", strtotime($bet->hour_event))}} <br>
+                                         <img class="sport_logo" src="/img/{{ $bet->getIconSport()}}.png" alt="">
                                             {{$bet->competition}}</td>
                                     <td>
                                         <b>
@@ -52,8 +52,8 @@
 
                                 @if ($bet->event_2)
                                 <tr>
-                                    <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br> <img class="sport_logo"
-                                            src="/img/.png">
+                                    <td> <b>{{$bet->event_2}}</b> <br> {{ date("d/m/Y", strtotime($bet->date_event_2))}} à {{ date("H:i", strtotime($bet->hour_event_2))}} <br>
+                                        <img class="sport_logo" src="/img/{{ $bet->getIconSport()}}.png" alt="">
                                             {{$bet->competition_2}}</td>
                                     <td> <b>{{$bet->prognosis_2}}</b></td>
                                     <td> <b>{{$bet->cost_2}}</b></td>

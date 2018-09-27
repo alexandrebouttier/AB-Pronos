@@ -118,11 +118,11 @@ class Bet_simple extends Model
     public static function getBetsIsOpen()
     {
         $bet_combi = DB::table('bet_combi')
-            ->select(\DB::raw('event,event_2,event_3,event_4,id,created_at,type,cost,date_event'))
+            ->select(\DB::raw('id,type,event,event_2,event_3,event_4,cost,date_event,created_at'))
             ->where('result', '=', "En attente");
 
         $bet_simple = DB::table('bet_simple')
-            ->select(\DB::raw('event,null AS event_2,null AS event_3,null AS event_4,id,created_at,type,cost,date_event'))
+            ->select(\DB::raw('id,type,event,null AS event_2,null AS event_3,null AS event_4,cost,date_event,created_at'))
             ->where('result', '=', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
@@ -139,8 +139,8 @@ class Bet_simple extends Model
 
             ->where('id', '=', $id);
 
-        $bet_simple = DB::table('bet_simple')
-            ->select(\DB::raw('id,event,null AS event_2,null AS event_3,null AS event_4,created_at,type,stake,sport,null AS sport_2,null AS sport_3,null AS sport_4,cost,null AS cost_2,null AS cost_3,null AS cost_4,date_event,null AS date_event_2,null AS date_event_3,null AS date_event_4,hour_event,null AS hour_event_2,null AS hour_event_3,null AS hour_event_4,
+        $bet_simple = Bet_simple::select(\DB::raw(
+           'id,event,null AS event_2,null AS event_3,null AS event_4,created_at,type,stake,sport,null AS sport_2,null AS sport_3,null AS sport_4,cost,null AS cost_2,null AS cost_3,null AS cost_4,date_event,null AS date_event_2,null AS date_event_3,null AS date_event_4,hour_event,null AS hour_event_2,null AS hour_event_3,null AS hour_event_4,
             competition,null AS competition_2,null AS competition_3,null AS competition_4,prognosis,null AS prognosis_1,null AS prognosis_2,null AS prognosis_3,null AS prognosis_4,result'))
             ->where('id', '=', $id)
             ->unionAll($bet_combi)
@@ -183,7 +183,7 @@ class Bet_simple extends Model
                 $icon = 'cancel';
                 break;
             case 'En attente':
-                $icon = 'cancel';
+                $icon = 'time';
                 break;
         }
         return $icon;
