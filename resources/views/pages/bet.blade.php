@@ -15,14 +15,14 @@
                     @foreach ($bets as $bet)
                 <div class="bet">
 
-                    <a href="/pronostics" class="btn btn-info">RETOUR</a>
+                    <a style="margin-top:1em; margin-bottom:1em;" href="/pronostics" class="btn btn-info">RETOUR</a>
                     <br>
-                    <span class="posted-on">Publié
-                        le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("d/m/Y à H:i", strtotime($bet->created_at))}}</time>
+                    <span class="posted-on text-bold">Publié
+                        le  <time class="entry-date published updated" datetime="2018-09-26T13:07:04+00:00">{{ date("d/m/Y à H:i", strtotime($bet->created_at))}}</time> - {{ $bet->type}}
                     </span>
 
-                    <div class="table-responsive-md"> Pari {{ $bet->type}} <br>
-                        Résultat:<img class="img-result" src="/img/{{ $bet->getIconResult()}}.png" alt="">
+                    <div class="table-responsive-md">
+                      <img style="margin-top:1em; margin-bottom:1em;" class="img-result" src="/img/{{ $bet->getIconResult()}}.png" alt="">
                          <table class="table table-striped">
                             <thead>
                                 <tr>
