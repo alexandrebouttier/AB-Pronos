@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class Bet_simple extends Model
 {
-    protected $table = 'Bet_simple';
+    protected $table = 'bet_simple';
 
     public function user()
     {
