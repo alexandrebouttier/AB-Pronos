@@ -129,14 +129,15 @@ class Bet_simple extends Model
     public static function getBetsIsOpen()
     {
         $bet_combi = DB::table('bet_combi')
-            ->select(\DB::raw('id,type,event,event_2,event_3,event_4,cost,date_event,created_at'))
+            ->select(\DB::raw('id,type,event,event_2,event_3,event_4,cost,date_event,hour_event,created_at'))
             ->where('result', '=', "En attente");
 
         $bet_simple = DB::table('bet_simple')
-            ->select(\DB::raw('id,type,event,null AS event_2,null AS event_3,null AS event_4,cost,date_event,created_at'))
+            ->select(\DB::raw('id,type,event,null AS event_2,null AS event_3,null AS event_4,cost,date_event,hour_event,created_at'))
             ->where('result', '=', "En attente")
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
+            ->orderBy('hour_event', 'DESC')
             ->simplePaginate(6);
         return $bet_simple;
     }
