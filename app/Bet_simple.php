@@ -118,7 +118,7 @@ class Bet_simple extends Model
             ->unionAll($bet_combi)
             ->orderBy('date_event', 'DESC')
             ->orderBy('hour_event', 'DESC')
-            ->simplePaginate(10);
+            ->simplePaginate(15);
 
 
 
