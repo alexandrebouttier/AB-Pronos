@@ -7,5 +7,5 @@ use Illuminate\Support\Facades\DB;
 
 class Bet_combi extends Model
 {
-    protected $table = 'Bet_combi';
+    protected $table = 'bet_combi';
 }
