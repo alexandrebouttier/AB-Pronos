@@ -4,6 +4,7 @@
 
 <div class="container">
     <h2 class="text-center">Pronostics</h2>
+    <h5 class="text-center">Mes pronostics en cours</h5>
     <div class="flex_row">
             @if ($nbBets>0)
         @foreach ($bets as $bet)
