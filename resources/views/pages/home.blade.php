@@ -140,7 +140,7 @@
 </section>
 
 <!-- // Fin Section stats -->
-
+@guest
 <!-- Début Section ads_subscription -->
 <section id="ads_subscription">
     <div class="container">
@@ -161,6 +161,7 @@
 
 </section>
 <!-- // Fin Section ads_subscription -->
+@endguest
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
