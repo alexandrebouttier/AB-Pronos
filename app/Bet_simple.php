@@ -136,8 +136,8 @@ class Bet_simple extends Model
             ->select(\DB::raw('id,type,event,null AS event_2,null AS event_3,null AS event_4,cost,date_event,hour_event,created_at'))
             ->where('result', '=', "En attente")
             ->unionAll($bet_combi)
-            ->orderBy('date_event', 'DESC')
-            ->orderBy('hour_event', 'DESC')
+            ->orderBy('date_event', 'ASC')
+            ->orderBy('hour_event', 'ASC')
             ->simplePaginate(6);
         return $bet_simple;
     }
