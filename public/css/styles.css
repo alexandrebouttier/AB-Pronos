@@ -99,11 +99,17 @@ a{
 }
 
 /*========================== 04.JUMBOTRON ========================== */
-
+mark {
+  background-color: #FFFFFF;
+  color: black;
+}
 .jumbotron {
-    background-image: linear-gradient(to right top, #2f3640, #262d3d, #202439, #1c1b34, #1b112e);
+   /*= background-image: linear-gradient(to right top, #2f3640, #262d3d, #202439, #1c1b34, #1b112e);*/
+    background: url(/img/banner.jpg) no-repeat;
+    background-size: cover;
     color: white;
     padding: 7rem 2rem;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
 }
 .jumbotron h1{
     font-family: 'Oswald';
