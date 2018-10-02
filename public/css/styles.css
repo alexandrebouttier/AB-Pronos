@@ -104,7 +104,7 @@ mark {
   color: black;
 }
 .jumbotron {
-   /*= background-image: linear-gradient(to right top, #2f3640, #262d3d, #202439, #1c1b34, #1b112e);*/
+  
     background: url(/img/banner.jpg) no-repeat;
     background-size: cover;
     color: white;
@@ -118,6 +118,19 @@ mark {
 }
 .jumbotron .lead{
     font-family: 'Roboto-Regular';
+}
+
+
+@media screen and (max-width: 1250px) {
+    .jumbotron   {
+       background-image: linear-gradient(to right top, #2f3640, #262d3d, #202439, #1c1b34, #1b112e);
+    }
+    mark {
+background-color: transparent;
+    color: white;
+
+}
+  
 }
 
 /*========================== 06.LASTRESULTS ========================== */
