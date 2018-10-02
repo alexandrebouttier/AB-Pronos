@@ -162,13 +162,14 @@
 </section>
 <!-- // Fin Section ads_subscription -->
 @endguest
+
 <div class="container">
 <h2 class="text-center">Derniers Tweets</h2>
 <h5 class="text-center">Mes derniers Tweets</h5>
 <div class="row">
         <div class="col-md-12 text-center">
                 <a style="margin: 0 auto;" class="twitter-timeline text-center" data-lang="fr" data-width="600" data-height="600" data-theme="light" href="https://twitter.com/AB_Pronostics?ref_src=twsrc%5Etfw">Tweets by AB_Pronostics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
+</div>
     
 
 </div> 
