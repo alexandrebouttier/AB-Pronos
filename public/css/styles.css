@@ -243,3 +243,12 @@ p.timeline-Tweet-text {
     line-height: 24px;
     font-weight: 300;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .pub  {
+        display:none;
+    }
+  
+}
