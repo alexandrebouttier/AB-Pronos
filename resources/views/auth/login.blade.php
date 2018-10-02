@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<section style="margin-top:1.5em; margin-bottom:1.5em;"id="register_pub">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Inscription 100% gratuite</h2>
+                <p>Vous n'avez absolument rien à payer au moment de votre inscription.<br> Un simple formulaire
+                    d'inscription et le tour est joué !<br> Que demander de mieux ?
+                </p>
+                <a href="{{ url ('/register') }}" class="btn btn-success my-2 my-sm-0 text-uppercase">S'inscrire</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -65,7 +79,13 @@
                     </form>
                 </div>
             </div>
+          
+
+
         </div>
     </div>
 </div>
+
+
+
 @endsection
