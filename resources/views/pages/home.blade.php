@@ -4,7 +4,7 @@
 
 @include('partials/jumbotron')
 
-<!-- Début Section whychoose -->
+<!--
 <section id="whychoose">
     <div class="container">
         <h2 class="text-center">Pourquoi choisir ABPronos ?</h2>
@@ -28,7 +28,7 @@
         </div>
     </div>
 </section>
-<!-- // Fin Section whychoose -->
+ -->
 
 <!-- Début Section lastbets table -->
 <section>
@@ -174,9 +174,9 @@
         <div class="col-md-12 text-center">
                 <a style="margin: 0 auto;" class="twitter-timeline text-center" data-lang="fr" data-width="600" data-height="600" data-theme="light" href="https://twitter.com/AB_Pronostics?ref_src=twsrc%5Etfw">Tweets by AB_Pronostics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-    
 
-</div> 
+
+</div>
 
 
 </div>
