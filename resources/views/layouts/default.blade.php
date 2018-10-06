@@ -58,7 +58,7 @@
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="315" />
     <meta property="og:description" content="ABPronos est une plateforme de pronostics pour les paris sportifs , je vous partage mes meilleurs pronostics  pour différent sport comme le football , le tennis" />
-    <meta property="fb:app_id" content="467151287075682" />
+    <meta property="fb:app_id" content="277392549548305" />
     <link rel="icon" type="image/png" href="{{ URL::asset('img/favicon.png') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
