@@ -149,11 +149,11 @@ class Bet_simple extends Model
         $id = request('id');
         $bet_combi = DB::table('bet_combi')
             ->select(\DB::raw('id,type,event,event_2,event_3,event_4,stake,sport,sport_2,sport_3,sport_4,competition,
-            competition_2,competition_3,competition_4,cost,cost_2,cost_3,cost_4,date_event,date_event_2,date_event_3,date_event_4,hour_event,hour_event_2,hour_event_3,hour_event_4,null AS prognosis,prognosis_1,prognosis_2,prognosis_3,prognosis_4,result,created_at'))
+            competition_2,competition_3,competition_4,cost,cost_1,cost_2,cost_3,cost_4,date_event,date_event_2,date_event_3,date_event_4,hour_event,hour_event_2,hour_event_3,hour_event_4,null AS prognosis,prognosis_1,prognosis_2,prognosis_3,prognosis_4,result,created_at'))
             ->where('id', '=', $id)
             ->where('type', '=', $type);
         $bet_simple = Bet_simple::select(\DB::raw(
-            'id,type,event,null AS event_2,null AS event_3,null AS event_4,stake,sport,null AS sport_2,null AS sport_3,null AS sport_4,competition,null AS competition_2,null AS competition_3,null AS competition_4,cost,null AS cost_2,null AS cost_3,null AS cost_4,date_event,null AS date_event_2,null AS date_event_3,null AS date_event_4,hour_event,null AS hour_event_2,null AS hour_event_3,null AS hour_event_4,
+            'id,type,event,null AS event_2,null AS event_3,null AS event_4,stake,sport,null AS sport_2,null AS sport_3,null AS sport_4,competition,null AS competition_2,null AS competition_3,null AS competition_4,cost,null AS cost_1,null AS cost_2,null AS cost_3,null AS cost_4,date_event,null AS date_event_2,null AS date_event_3,null AS date_event_4,hour_event,null AS hour_event_2,null AS hour_event_3,null AS hour_event_4,
            prognosis,null AS prognosis_1,null AS prognosis_2,null AS prognosis_3,null AS prognosis_4,result,created_at'))
             ->where('id', '=', $id)
             ->where('type', '=', $type)

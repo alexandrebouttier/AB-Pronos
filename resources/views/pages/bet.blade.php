@@ -50,7 +50,14 @@
                                                 {{$bet->prognosis_1}}
                                             @endif
                                        </b></td>
-                                    <td> <b>{{$bet->cost}}</b></td>
+                                    <td> <b>
+                                            @if($bet->type == "Simple")
+                                            {{$bet->cost}}
+                                        @elseif($bet->type == "Combiné")
+                                        {{$bet->cost_1}}
+                                        @endif
+
+                                    </b></td>
                                 </tr>
                                 @endif
 
@@ -118,7 +125,7 @@
                     <div style="margin-top:1em;"class="pub text-center">
                             <iframe scrolling='no' frameBorder='0' style='padding:0px; margin:0px; border:0px;border-style:none;border-style:none;' width='728' height='90' src="https://wlbetclicfr.adsrv.eacdn.com/I.ashx?btag=a_2738b_694c_&affid=1931&siteid=2738&adid=694&c=" ></iframe>
                     </div>
-                  
+
                 </div>
                 @endforeach
 
