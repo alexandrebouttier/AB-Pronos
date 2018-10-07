@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46924947-7"></script>
 <script>
@@ -38,11 +38,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ABPronostics - Pronostics de paris sportifs">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.ab-pronostics.fr">
+    <meta name="keywords" content="tipster, tipsters, pari sportif, sport, football,tennis,rugby, basket-ball,bets,bet,unibet,betclic,pronostic,foot,argent" />
+    <!-- Facebook Open graph  -->
+    <meta property="og:title" content="ABPronostics - Pronostics de paris sportifs" />
+    <meta property="og:site_name" content="ABPronostics - Pronostics de paris sportifs" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://www.ab-pronostics.fr" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:image:src" content="https://www.ab-pronostics.fr/img/og-image.png">
+    <meta name="twitter:image" content="https://www.ab-pronostics.fr/img/og-image.png" />
+    <meta property="og:image" content="https://www.ab-pronostics.fr/img/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Logo du site web AB-Pronostics" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <meta property="og:description" content="ABPronostics est une plateforme de pronostics pour les paris sportifs , je vous partage mes meilleurs pronostics  pour différent sport comme le football , le tennis" />
+    <meta property="fb:app_id" content="277392549548305" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>ABPronos - Pronostiqueur en paris sportifS</title>
+    <title>ABPronostics - Pronostics de paris sportifs</title>
 
     <!-- Scripts -->
 
